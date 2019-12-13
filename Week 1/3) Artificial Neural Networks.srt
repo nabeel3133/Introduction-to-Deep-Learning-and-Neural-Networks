@@ -1,0 +1,481 @@
+WEBVTT
+
+1
+00:00:00.030 --> 00:00:04.230
+In this video, we will start learning
+
+2
+00:00:04.230 --> 00:00:05.910
+about the mathematical formulation of
+
+3
+00:00:05.910 --> 00:00:09.750
+neural networks. In the previous video, we
+
+4
+00:00:09.750 --> 00:00:11.400
+established that the shape of an
+
+5
+00:00:11.400 --> 00:00:13.830
+artificial neuron looks like this in
+
+6
+00:00:13.830 --> 00:00:15.960
+order to resemble a real biological
+
+7
+00:00:15.960 --> 00:00:19.890
+neuron. For a network of neurons, we
+
+8
+00:00:19.890 --> 00:00:21.840
+normally divide it into different layers:
+
+9
+00:00:21.840 --> 00:00:25.019
+the first layer that feeds the input into
+
+10
+00:00:25.019 --> 00:00:27.269
+the network is obviously called the
+
+11
+00:00:27.269 --> 00:00:30.090
+input layer. The set of nodes that
+
+12
+00:00:30.090 --> 00:00:31.830
+provide the output of the network is
+
+13
+00:00:31.830 --> 00:00:35.250
+called the output layer. And any sets of
+
+14
+00:00:35.250 --> 00:00:37.559
+nodes in between the input and the
+
+15
+00:00:37.559 --> 00:00:39.719
+output layers are called the hidden
+
+16
+00:00:39.719 --> 00:00:45.780
+layers. When working with neural networks,
+
+17
+00:00:45.780 --> 00:00:48.360
+the three main topics that we deal with
+
+18
+00:00:48.360 --> 00:00:52.440
+are: forward propagation, backpropagation,
+
+19
+00:00:52.440 --> 00:00:55.980
+and activation functions. The rest of
+
+20
+00:00:55.980 --> 00:00:58.530
+this video will be mainly about forward
+
+21
+00:00:58.530 --> 00:01:00.809
+propagation, and I will explain it
+
+22
+00:01:00.809 --> 00:01:04.409
+through examples with numbers. Forward
+
+23
+00:01:04.409 --> 00:01:06.420
+propagation is the process through which
+
+24
+00:01:06.420 --> 00:01:09.780
+data passes through layers of neurons in
+
+25
+00:01:09.780 --> 00:01:12.030
+a neural network from the input layer
+
+26
+00:01:12.030 --> 00:01:15.840
+all the way to the output layer. Let's
+
+27
+00:01:15.840 --> 00:01:18.000
+use one neuron and mathematically
+
+28
+00:01:18.000 --> 00:01:19.979
+formulate the way information flows
+
+29
+00:01:19.979 --> 00:01:23.729
+through it. As shown here, the data flows
+
+30
+00:01:23.729 --> 00:01:25.890
+through each neuron by connections or
+
+31
+00:01:25.890 --> 00:01:28.409
+the dendrites. Every connection has a
+
+32
+00:01:28.409 --> 00:01:30.630
+specific weight by which the flow of
+
+33
+00:01:30.630 --> 00:01:34.500
+data is regulated. Here x1 and x2 are the
+
+34
+00:01:34.500 --> 00:01:37.320
+two inputs, they could be an integer or
+
+35
+00:01:37.320 --> 00:01:40.890
+float. When these inputs pass through the
+
+36
+00:01:40.890 --> 00:01:43.409
+connections, they're adjusted depending
+
+37
+00:01:43.409 --> 00:01:45.780
+on the connection weights, w1 and w2.
+
+38
+00:01:45.780 --> 00:01:48.630
+The neuron then processes this
+
+39
+00:01:48.630 --> 00:01:51.329
+information by outputting a weighted sum
+
+40
+00:01:51.329 --> 00:01:54.420
+of these inputs. It also adds a constant
+
+41
+00:01:54.420 --> 00:01:56.490
+to the sum which is referred to as the
+
+42
+00:01:56.490 --> 00:02:00.479
+bias. So, z here is the linear
+
+43
+00:02:00.479 --> 00:02:02.399
+combination of the inputs and weights
+
+44
+00:02:02.399 --> 00:02:05.670
+along with the bias, and a is the output
+
+45
+00:02:05.670 --> 00:02:08.940
+of the network. For consistency, we will
+
+46
+00:02:08.940 --> 00:02:10.770
+stick to these letters throughout the
+
+47
+00:02:10.770 --> 00:02:13.410
+course, so z will always represent the
+
+48
+00:02:13.410 --> 00:02:13.680
+linear
+
+49
+00:02:13.680 --> 00:02:16.319
+combination of the inputs, and a will
+
+50
+00:02:16.319 --> 00:02:18.709
+always represent the output of a neuron.
+
+51
+00:02:18.709 --> 00:02:21.989
+However, simply outputting a weighted sum
+
+52
+00:02:21.989 --> 00:02:24.689
+of the inputs limits the tasks that can
+
+53
+00:02:24.689 --> 00:02:26.280
+be performed by the neural network.
+
+54
+00:02:26.280 --> 00:02:29.489
+Therefore, a better processing of the
+
+55
+00:02:29.489 --> 00:02:32.879
+data would be to map the weighted sum to
+
+56
+00:02:32.879 --> 00:02:36.060
+a nonlinear space. A popular function is
+
+57
+00:02:36.060 --> 00:02:38.069
+the sigmoid function, where if the
+
+58
+00:02:38.069 --> 00:02:40.620
+weighted sum is a very large positive
+
+59
+00:02:40.620 --> 00:02:43.290
+number, then the output of the neuron is
+
+60
+00:02:43.290 --> 00:02:45.900
+close to 1, and if the weighted sum is a
+
+61
+00:02:45.900 --> 00:02:48.419
+very large negative number, then the
+
+62
+00:02:48.419 --> 00:02:51.650
+output of the neuron is close to zero.
+
+63
+00:02:51.650 --> 00:02:53.879
+Non-linear transformations like the
+
+64
+00:02:53.879 --> 00:02:56.340
+sigmoid function are called activation
+
+65
+00:02:56.340 --> 00:02:59.400
+functions. Activation functions are
+
+66
+00:02:59.400 --> 00:03:01.409
+another extremely important feature of
+
+67
+00:03:01.409 --> 00:03:04.019
+artificial neural networks. They
+
+68
+00:03:04.019 --> 00:03:06.269
+basically decide whether a neuron should
+
+69
+00:03:06.269 --> 00:03:08.639
+be activated or not. In other words,
+
+70
+00:03:08.639 --> 00:03:10.560
+whether the information that the neuron
+
+71
+00:03:10.560 --> 00:03:12.870
+is receiving is relevant or should be
+
+72
+00:03:12.870 --> 00:03:15.870
+ignored. The takeaway message here is
+
+73
+00:03:15.870 --> 00:03:17.639
+that a neural network without an
+
+74
+00:03:17.639 --> 00:03:20.190
+activation function is essentially just
+
+75
+00:03:20.190 --> 00:03:23.370
+a linear regression model. The activation
+
+76
+00:03:23.370 --> 00:03:25.409
+function performs non-linear
+
+77
+00:03:25.409 --> 00:03:28.169
+transformation to the input enabling the
+
+78
+00:03:28.169 --> 00:03:29.939
+neural network of learning and
+
+79
+00:03:29.939 --> 00:03:32.579
+performing more complex tasks, such as
+
+80
+00:03:32.579 --> 00:03:35.400
+image classifications and language
+
+81
+00:03:35.400 --> 00:03:38.699
+translations. For further simplification,
+
+82
+00:03:38.699 --> 00:03:40.560
+I am going to proceed with a neural network
+
+83
+00:03:40.560 --> 00:03:43.829
+of one neuron and one input. Let's go
+
+84
+00:03:43.829 --> 00:03:45.659
+over an example of how to compute the
+
+85
+00:03:45.659 --> 00:03:50.340
+output. Let's say that the value of x1 is
+
+86
+00:03:50.340 --> 00:03:53.040
+0.1, and we want to predict the output
+
+87
+00:03:53.040 --> 00:03:56.189
+for this input. The network has optimized
+
+88
+00:03:56.189 --> 00:04:01.019
+weight and bias where w1 is 0.15 and b1
+
+89
+00:04:01.019 --> 00:04:04.409
+is 0.4. The first step is to calculate
+
+90
+00:04:04.409 --> 00:04:06.780
+z, which is the dot product of the
+
+91
+00:04:06.780 --> 00:04:09.060
+inputs and the corresponding weights
+
+92
+00:04:09.060 --> 00:04:13.080
+plus the bias. So we find that z is 0.415.
+
+93
+00:04:13.080 --> 00:04:16.978
+The neuron then uses
+
+94
+00:04:16.978 --> 00:04:20.310
+the sigmoid function to apply non-linear
+
+95
+00:04:20.310 --> 00:04:22.919
+transformation to z. Therefore, the
+
+96
+00:04:22.919 --> 00:04:27.480
+output of the neuron is 0.6023.
+
+97
+00:04:27.480 --> 00:04:29.880
+For a network with two neurons, the
+
+98
+00:04:29.880 --> 00:04:31.950
+output from the first neuron will be the
+
+99
+00:04:31.950 --> 00:04:34.890
+input to the second neuron. The rest is
+
+100
+00:04:34.890 --> 00:04:37.440
+then exactly the same. The second neuron
+
+101
+00:04:37.440 --> 00:04:41.010
+takes the input and computes the dot
+
+102
+00:04:41.010 --> 00:04:43.410
+product of the input, which is a1 in
+
+103
+00:04:43.410 --> 00:04:46.500
+this case, and the weight which is w2,
+
+104
+00:04:46.500 --> 00:04:50.820
+and adds the bias which is b2. Using a
+
+105
+00:04:50.820 --> 00:04:52.800
+sigmoid function as the activation
+
+106
+00:04:52.800 --> 00:04:55.290
+function, the output of the network would
+
+107
+00:04:55.290 --> 00:04:57.630
+be 0.7153.
+
+108
+00:04:57.630 --> 00:05:00.090
+And this would be the predicted value for
+
+109
+00:05:00.090 --> 00:05:02.370
+the input 0.1. This is in
+
+110
+00:05:02.370 --> 00:05:04.470
+essence how a neural network predicts
+
+111
+00:05:04.470 --> 00:05:07.200
+the output for any given input. No matter
+
+112
+00:05:07.200 --> 00:05:09.900
+how complicated the network gets, it is
+
+113
+00:05:09.900 --> 00:05:13.730
+the same exact process. To summarize,
+
+114
+00:05:13.730 --> 00:05:16.170
+given a neural network with a set of
+
+115
+00:05:16.170 --> 00:05:18.810
+weights and biases, you should be able to
+
+116
+00:05:18.810 --> 00:05:20.310
+compute the output of the network for
+
+117
+00:05:20.310 --> 00:05:23.940
+any given input. In the next video, we
+
+118
+00:05:23.940 --> 00:05:25.410
+will start learning how to train a
+
+119
+00:05:25.410 --> 00:05:27.630
+neural network and optimize the weights
+
+120
+00:05:27.630 --> 00:05:29.630
+and the biases.

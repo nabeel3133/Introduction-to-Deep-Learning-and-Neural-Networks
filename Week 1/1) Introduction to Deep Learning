@@ -1,0 +1,415 @@
+1
+00:00:00.410 --> 00:00:03.689
+In this video, we will start talking
+
+2
+00:00:03.689 --> 00:00:05.790
+about deep learning and how the recent
+
+3
+00:00:05.790 --> 00:00:08.099
+advances in the field have led to
+
+4
+00:00:08.099 --> 00:00:11.690
+amazing and mind-blowing applications.
+
+5
+00:00:11.690 --> 00:00:14.160
+I am sure that you are aware that deep
+
+6
+00:00:14.160 --> 00:00:16.170
+learning is one of the hottest subjects
+
+7
+00:00:16.170 --> 00:00:18.590
+in data science, if not the hottest,
+
+8
+00:00:18.590 --> 00:00:21.060
+especially with the tremendous amount of
+
+9
+00:00:21.060 --> 00:00:23.519
+fascinating projects that are surfacing
+
+10
+00:00:23.519 --> 00:00:26.130
+with the help of deep learning; projects
+
+11
+00:00:26.130 --> 00:00:28.080
+which people deemed almost impossible
+
+12
+00:00:28.080 --> 00:00:29.869
+with just a little over a decade ago.
+
+13
+00:00:29.869 --> 00:00:32.219
+Therefore, there is a lot of excitement
+
+14
+00:00:32.219 --> 00:00:35.190
+about deep learning. In this video, I will
+
+15
+00:00:35.190 --> 00:00:37.320
+share with you some amazing and recent
+
+16
+00:00:37.320 --> 00:00:39.690
+applications of deep learning that will
+
+17
+00:00:39.690 --> 00:00:42.480
+hopefully inspire and motivate you even
+
+18
+00:00:42.480 --> 00:00:45.809
+more about deep learning. The first
+
+19
+00:00:45.809 --> 00:00:48.539
+amazing application is color restoration,
+
+20
+00:00:48.539 --> 00:00:51.710
+where a given image in greyscale is
+
+21
+00:00:51.710 --> 00:00:54.239
+automatically turned into a colored one.
+
+22
+00:00:54.239 --> 00:00:57.510
+A group of researchers in Japan built a
+
+23
+00:00:57.510 --> 00:00:59.129
+system using convolutional neural
+
+24
+00:00:59.129 --> 00:01:01.850
+networks that can take a grayscale image,
+
+25
+00:01:01.850 --> 00:01:06.510
+like these ones, and add life to them by
+
+26
+00:01:06.510 --> 00:01:10.200
+turning them into colored ones. You can
+
+27
+00:01:10.200 --> 00:01:12.360
+find many other awesome examples by
+
+28
+00:01:12.360 --> 00:01:14.250
+following this link, which you can also
+
+29
+00:01:14.250 --> 00:01:19.049
+find below the video. Another really cool
+
+30
+00:01:19.049 --> 00:01:22.110
+but double-sworded application is speech
+
+31
+00:01:22.110 --> 00:01:24.720
+enactment, where an audio clip is
+
+32
+00:01:24.720 --> 00:01:27.509
+synthesized with a video, and the lip
+
+33
+00:01:27.509 --> 00:01:29.549
+movements in the video are synced with
+
+34
+00:01:29.549 --> 00:01:31.729
+the sounds and words in the audio clip.
+
+35
+00:01:31.729 --> 00:01:34.259
+Many attempts have been made in the past
+
+36
+00:01:34.259 --> 00:01:36.840
+to build such a system, but many of them
+
+37
+00:01:36.840 --> 00:01:39.170
+produced results that looked uncanny.
+
+38
+00:01:39.170 --> 00:01:41.939
+Recently, a group of researchers at the
+
+39
+00:01:41.939 --> 00:01:44.280
+University of Washington built the first
+
+40
+00:01:44.280 --> 00:01:46.770
+system that generates realistic results
+
+41
+00:01:46.770 --> 00:01:49.140
+by training a recurrent neural network
+
+42
+00:01:49.140 --> 00:01:51.840
+on a large corpus of video data of a
+
+43
+00:01:51.840 --> 00:01:54.270
+single person. The subject of their case
+
+44
+00:01:54.270 --> 00:01:56.219
+study was the former President of the
+
+45
+00:01:56.219 --> 00:01:59.219
+United States, Barack Obama. Let's look at
+
+46
+00:01:59.219 --> 00:02:01.350
+their example. So here is an audio clip
+
+47
+00:02:01.350 --> 00:02:05.310
+from one of Obama's speeches. "It's been
+
+48
+00:02:05.310 --> 00:02:07.140
+less than a week since the deadliest
+
+49
+00:02:07.140 --> 00:02:09.568
+mass shooting in American history." The
+
+50
+00:02:09.568 --> 00:02:11.430
+audio clip was synthesized with a
+
+51
+00:02:11.430 --> 00:02:13.530
+video of one of his other
+
+52
+00:02:13.530 --> 00:02:15.510
+speeches, and his lip movements were
+
+53
+00:02:15.510 --> 00:02:17.370
+synced with the words and sounds in the
+
+54
+00:02:17.370 --> 00:02:22.350
+audio clip. Let's take a look. "It's been
+
+55
+00:02:22.350 --> 00:02:24.060
+less than a week since the deadliest
+
+56
+00:02:24.060 --> 00:02:26.910
+mass shooting in American history." Anyone
+
+57
+00:02:26.910 --> 00:02:28.800
+watching the video can't really tell
+
+58
+00:02:28.800 --> 00:02:32.880
+that the video was synthesized. Not only
+
+59
+00:02:32.880 --> 00:02:35.400
+that, but their system is also capable of
+
+60
+00:02:35.400 --> 00:02:37.560
+extracting an audio from a video and
+
+61
+00:02:37.560 --> 00:02:39.660
+syncing the lip movements in another
+
+62
+00:02:39.660 --> 00:02:41.700
+video with the audio from the first
+
+63
+00:02:41.700 --> 00:02:44.690
+video. Let's look at an example of this.
+
+64
+00:02:44.690 --> 00:02:46.830
+"Especially our friends who were lesbian,
+
+65
+00:02:46.830 --> 00:02:50.370
+gay, bisexual, or transgender. I visited
+
+66
+00:02:50.370 --> 00:02:51.870
+with the families of many of the victims
+
+67
+00:02:51.870 --> 00:02:54.030
+on Thursday and one thing I told them is
+
+68
+00:02:54.030 --> 00:02:57.090
+that they're not alone." Your jaw dropped yet?
+
+69
+00:02:57.090 --> 00:03:00.600
+Well mine did, although I created this
+
+70
+00:03:00.600 --> 00:03:06.150
+slide and I knew what was coming. Another
+
+71
+00:03:06.150 --> 00:03:08.160
+fascinating application of deep learning
+
+72
+00:03:08.160 --> 00:03:11.940
+is automatic handwriting generation. Alex
+
+73
+00:03:11.940 --> 00:03:14.340
+Graves at the University of Toronto used
+
+74
+00:03:14.340 --> 00:03:16.650
+recurrent neural networks to design an
+
+75
+00:03:16.650 --> 00:03:18.630
+algorithm that can rewrite a given
+
+76
+00:03:18.630 --> 00:03:21.329
+message in highly realistic cursive
+
+77
+00:03:21.329 --> 00:03:23.959
+handwriting in a wide variety of styles.
+
+78
+00:03:23.959 --> 00:03:28.739
+So you can type some text in this field
+
+79
+00:03:28.739 --> 00:03:31.640
+and you can either select the style of
+
+80
+00:03:31.640 --> 00:03:34.470
+handwriting to be generated or let the
+
+81
+00:03:34.470 --> 00:03:38.450
+algorithm randomly select it for you.
+
+82
+00:03:40.310 --> 00:03:42.329
+There is a plethora of other
+
+83
+00:03:42.329 --> 00:03:45.239
+applications such as automatic machine
+
+84
+00:03:45.239 --> 00:03:47.760
+translation, where convolutional neural
+
+85
+00:03:47.760 --> 00:03:50.519
+networks are used to translate text in
+
+86
+00:03:50.519 --> 00:03:53.280
+an image on the fly. Another application
+
+87
+00:03:53.280 --> 00:03:56.280
+is automatically adding sounds to silent
+
+88
+00:03:56.280 --> 00:03:58.980
+movies, where a deep learning model uses
+
+89
+00:03:58.980 --> 00:04:01.590
+a database of pre-recorded sounds to
+
+90
+00:04:01.590 --> 00:04:04.200
+select a sound to play that best matches
+
+91
+00:04:04.200 --> 00:04:07.170
+what is taking place in the scene. Not to
+
+92
+00:04:07.170 --> 00:04:09.180
+leave out the popular applications of
+
+93
+00:04:09.180 --> 00:04:11.459
+classifying objects in images and
+
+94
+00:04:11.459 --> 00:04:16.620
+self-driving cars. For almost all of the
+
+95
+00:04:16.620 --> 00:04:18.630
+aforementioned applications, you heard me
+
+96
+00:04:18.630 --> 00:04:21.899
+say neural networks again and again. So
+
+97
+00:04:21.899 --> 00:04:23.970
+you must be asking haven't neural
+
+98
+00:04:23.970 --> 00:04:26.700
+networks been around for quite some time?
+
+99
+00:04:26.700 --> 00:04:28.620
+How come all of a sudden they are taking
+
+100
+00:04:28.620 --> 00:04:30.570
+off and becoming very popular with
+
+101
+00:04:30.570 --> 00:04:33.300
+endless applications? In order to answer
+
+102
+00:04:33.300 --> 00:04:35.280
+this question, let's start learning the
+
+103
+00:04:35.280 --> 00:04:37.410
+specifics of neural networks and deep
+
+104
+00:04:37.410 --> 00:04:43.400
+learning.

@@ -1,0 +1,297 @@
+WEBVTT
+
+1
+00:00:00.439 --> 00:00:03.510
+All the algorithms that are used in deep
+
+2
+00:00:03.510 --> 00:00:06.150
+learning are largely inspired by the way
+
+3
+00:00:06.150 --> 00:00:08.880
+neurons and neural networks function and
+
+4
+00:00:08.880 --> 00:00:13.200
+process data in the brain. This image is
+
+5
+00:00:13.200 --> 00:00:14.969
+one of the very first pictures of a
+
+6
+00:00:14.969 --> 00:00:18.539
+neuron. It was drawn by Santiago Ramon
+
+7
+00:00:18.539 --> 00:00:19.170
+y Cajal,
+
+8
+00:00:19.170 --> 00:00:24.029
+back in 1899 based on what he saw after
+
+9
+00:00:24.029 --> 00:00:25.890
+placing a pigeon's brain under the
+
+10
+00:00:25.890 --> 00:00:28.560
+microscope. He is now known as the father
+
+11
+00:00:28.560 --> 00:00:31.560
+of modern neuroscience, but based on his
+
+12
+00:00:31.560 --> 00:00:34.200
+drawing, the neurons, one of them labeled
+
+13
+00:00:34.200 --> 00:00:37.590
+A, have big bodies in the middle and long
+
+14
+00:00:37.590 --> 00:00:40.200
+arms that stretch out and branch off to
+
+15
+00:00:40.200 --> 00:00:43.050
+connect with other neurons. This other
+
+16
+00:00:43.050 --> 00:00:44.940
+image here is that of a neural network
+
+17
+00:00:44.940 --> 00:00:47.640
+and has a bunch or thousands of neurons
+
+18
+00:00:47.640 --> 00:00:50.430
+in what looks like a brain tissue. Tt
+
+19
+00:00:50.430 --> 00:00:52.469
+gives you a sense of how tightly they
+
+20
+00:00:52.469 --> 00:00:54.930
+are packed together and how many of them
+
+21
+00:00:54.930 --> 00:00:59.940
+are in a small brain tissue. Going back
+
+22
+00:00:59.940 --> 00:01:02.160
+to the drawing of neurons by Ramon y Cajal,
+
+23
+00:01:02.160 --> 00:01:05.159
+let's rotate it 90 degrees to the
+
+24
+00:01:05.159 --> 00:01:05.610
+left.
+
+25
+00:01:05.610 --> 00:01:09.180
+I bet this way it is starting to look a
+
+26
+00:01:09.180 --> 00:01:11.220
+little familiar since it slightly
+
+27
+00:01:11.220 --> 00:01:13.350
+resembles drawings of artificial neural
+
+28
+00:01:13.350 --> 00:01:18.659
+networks that you must have seen. Here is
+
+29
+00:01:18.659 --> 00:01:22.020
+a cartoon drawing of the neuron. The main
+
+30
+00:01:22.020 --> 00:01:24.390
+body of the neuron is called the soma,
+
+31
+00:01:24.390 --> 00:01:26.990
+which contains the nucleus of the neuron.
+
+32
+00:01:26.990 --> 00:01:30.240
+The big network of arms sticking out of
+
+33
+00:01:30.240 --> 00:01:32.369
+the body is called the dendrites, and
+
+34
+00:01:32.369 --> 00:01:35.520
+then the long arm that sticks out of the
+
+35
+00:01:35.520 --> 00:01:37.740
+soma in the other direction is called
+
+36
+00:01:37.740 --> 00:01:40.470
+the axon. The whiskers at the end of the
+
+37
+00:01:40.470 --> 00:01:42.810
+axon are called the terminal buttons or
+
+38
+00:01:42.810 --> 00:01:46.020
+synapses. So the dendrites receive
+
+39
+00:01:46.020 --> 00:01:48.090
+electrical impulses which carry
+
+40
+00:01:48.090 --> 00:01:51.090
+information, or data, from sensors or
+
+41
+00:01:51.090 --> 00:01:52.799
+terminal buttons of other adjoining
+
+42
+00:01:52.799 --> 00:01:55.560
+neurons. The dendrites then carry the
+
+43
+00:01:55.560 --> 00:01:58.320
+impulses or data to the soma. In the
+
+44
+00:01:58.320 --> 00:02:01.110
+nucleus, electrical impulses, or the data,
+
+45
+00:02:01.110 --> 00:02:03.960
+are processed by combining them together,
+
+46
+00:02:03.960 --> 00:02:06.869
+and then they are passed on to the axon.
+
+47
+00:02:06.869 --> 00:02:09.690
+The axon then carries the processed
+
+48
+00:02:09.690 --> 00:02:11.670
+information to the terminal button or
+
+49
+00:02:11.670 --> 00:02:13.650
+synapse, and the output
+
+50
+00:02:13.650 --> 00:02:15.989
+of this neuron becomes the input to
+
+51
+00:02:15.989 --> 00:02:19.439
+thousands of other neurons. Learning in
+
+52
+00:02:19.439 --> 00:02:21.810
+the brain occurs by repeatedly
+
+53
+00:02:21.810 --> 00:02:23.970
+activating certain neural connections
+
+54
+00:02:23.970 --> 00:02:26.970
+over others, and this reinforces those
+
+55
+00:02:26.970 --> 00:02:29.730
+connections. This makes them more likely
+
+56
+00:02:29.730 --> 00:02:32.609
+to produce a desired outcome given a
+
+57
+00:02:32.609 --> 00:02:35.790
+specified input. Once the desired outcome
+
+58
+00:02:35.790 --> 00:02:38.250
+occurs, the neural connections causing
+
+59
+00:02:38.250 --> 00:02:43.519
+that outcome become strengthened. An
+
+60
+00:02:43.849 --> 00:02:46.620
+artificial neuron behaves in the same
+
+61
+00:02:46.620 --> 00:02:49.319
+way as a biological neuron. So it
+
+62
+00:02:49.319 --> 00:02:53.849
+consists of a soma, dendrites, and an axon
+
+63
+00:02:53.849 --> 00:02:56.940
+to pass on the output of this neuron to
+
+64
+00:02:56.940 --> 00:03:00.060
+other neurons. The end of the axon can
+
+65
+00:03:00.060 --> 00:03:01.680
+branch off to connect to many other
+
+66
+00:03:01.680 --> 00:03:04.230
+neurons, but for simplicity we are just
+
+67
+00:03:04.230 --> 00:03:06.959
+showing one branch here. The learning
+
+68
+00:03:06.959 --> 00:03:09.540
+process also very much resembles the way
+
+69
+00:03:09.540 --> 00:03:12.359
+learning occurs in the brain as you will
+
+70
+00:03:12.359 --> 00:03:16.709
+see in the next couple of videos. Now
+
+71
+00:03:16.709 --> 00:03:18.720
+that we understand the different parts
+
+72
+00:03:18.720 --> 00:03:21.359
+of an artificial neuron, let's learn how
+
+73
+00:03:21.359 --> 00:03:23.190
+we formulate the way artificial neural
+
+74
+00:03:23.190 --> 00:03:26.190
+networks process information.
