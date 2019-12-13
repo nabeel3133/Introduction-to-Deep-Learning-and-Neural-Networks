@@ -1,0 +1,363 @@
+1
+00:00:00.860 --> 00:00:03.090
+Before we can start building deep
+
+2
+00:00:03.090 --> 00:00:05.040
+learning networks, we will spend some
+
+3
+00:00:05.040 --> 00:00:06.569
+time learning about the different deep
+
+4
+00:00:06.569 --> 00:00:08.460
+learning libraries and frameworks that
+
+5
+00:00:08.460 --> 00:00:10.920
+are out there. In this video, I will
+
+6
+00:00:10.920 --> 00:00:12.750
+briefly cover the libraries that we'll
+
+7
+00:00:12.750 --> 00:00:15.929
+be teaching in this specialization. The
+
+8
+00:00:15.929 --> 00:00:18.090
+most popular library is in descending
+
+9
+00:00:18.090 --> 00:00:22.109
+order are TensorFlow, Keras, and PyTorch.
+
+10
+00:00:22.109 --> 00:00:25.769
+There is also Theano, a library developed
+
+11
+00:00:25.769 --> 00:00:27.990
+by the Montreal Institute for Learning
+
+12
+00:00:27.990 --> 00:00:30.869
+Algorithms, and was the major library for
+
+13
+00:00:30.869 --> 00:00:32.610
+deep learning development even before
+
+14
+00:00:32.610 --> 00:00:34.469
+TensorFlow and PyTorch.
+
+15
+00:00:34.469 --> 00:00:36.809
+However, the founders can't afford to
+
+16
+00:00:36.809 --> 00:00:38.700
+continuously support it and maintain it,
+
+17
+00:00:38.700 --> 00:00:41.100
+and therefore, the library lost its
+
+18
+00:00:41.100 --> 00:00:44.280
+popularity. Because of that, in this
+
+19
+00:00:44.280 --> 00:00:46.620
+specialization, we will focus on the
+
+20
+00:00:46.620 --> 00:00:51.539
+three other popular libraries. Among the
+
+21
+00:00:51.539 --> 00:00:54.539
+three libraries. TensorFlow is the most
+
+22
+00:00:54.539 --> 00:00:57.059
+popular one. It is the library that is
+
+23
+00:00:57.059 --> 00:00:59.039
+mostly used in production of deep
+
+24
+00:00:59.039 --> 00:01:01.170
+learning models. It has a very large
+
+25
+00:01:01.170 --> 00:01:03.449
+community. Just a quick look at the
+
+26
+00:01:03.449 --> 00:01:05.670
+number of forks on the library's Github
+
+27
+00:01:05.670 --> 00:01:07.770
+repository as well as the number of
+
+28
+00:01:07.770 --> 00:01:10.229
+commits and pull requests should suffice
+
+29
+00:01:10.229 --> 00:01:12.689
+in giving you an idea of how popular the
+
+30
+00:01:12.689 --> 00:01:16.710
+library is. Tensorflow was developed by
+
+31
+00:01:16.710 --> 00:01:18.840
+Google and released to the public in
+
+32
+00:01:18.840 --> 00:01:22.110
+2015, and is still being actively used at
+
+33
+00:01:22.110 --> 00:01:23.909
+Google for both research and production
+
+34
+00:01:23.909 --> 00:01:27.840
+needs. PyTorch on the other hand, is the
+
+35
+00:01:27.840 --> 00:01:30.060
+cousin of the Torch framework, which is
+
+36
+00:01:30.060 --> 00:01:32.430
+in Lua, and supports machine learning
+
+37
+00:01:32.430 --> 00:01:35.930
+algorithms running on GPUs in particular.
+
+38
+00:01:35.930 --> 00:01:38.939
+However being derived from the Torch
+
+39
+00:01:38.939 --> 00:01:41.400
+framework, PyTorch isn't just a set of
+
+40
+00:01:41.400 --> 00:01:43.950
+wrappers to support a popular language
+
+41
+00:01:43.950 --> 00:01:46.530
+like Python. Tt was actually rewritten
+
+42
+00:01:46.530 --> 00:01:49.590
+and tailored to be fast and feel native.
+
+43
+00:01:49.590 --> 00:01:53.430
+PyTorch was released in 2016 and has
+
+44
+00:01:53.430 --> 00:01:56.159
+gained immense interest lately and is
+
+45
+00:01:56.159 --> 00:01:57.960
+becoming the preferred language over
+
+46
+00:01:57.960 --> 00:01:58.649
+TensorFlow,
+
+47
+00:01:58.649 --> 00:02:01.079
+especially in academic research settings
+
+48
+00:02:01.079 --> 00:02:02.969
+and applications of deep learning
+
+49
+00:02:02.969 --> 00:02:05.549
+requiring optimizing custom expressions.
+
+50
+00:02:05.549 --> 00:02:07.860
+PyTorch is supported and being actively
+
+51
+00:02:07.860 --> 00:02:12.120
+used at Facebook. However, despite their
+
+52
+00:02:12.120 --> 00:02:13.800
+popularity, both
+
+53
+00:02:13.800 --> 00:02:16.170
+PyTorch and TensorFlow are not easy to
+
+54
+00:02:16.170 --> 00:02:19.110
+use, and have a steep learning curve. So
+
+55
+00:02:19.110 --> 00:02:20.550
+for people who are just starting to
+
+56
+00:02:20.550 --> 00:02:22.590
+learn deep learning, there is no better
+
+57
+00:02:22.590 --> 00:02:24.780
+library to use other than the Keras
+
+58
+00:02:24.780 --> 00:02:25.440
+library.
+
+59
+00:02:25.440 --> 00:02:28.440
+Keras is a high level API for building
+
+60
+00:02:28.440 --> 00:02:30.870
+deep learning models. It has gained favor
+
+61
+00:02:30.870 --> 00:02:33.060
+for its ease of use and syntactic
+
+62
+00:02:33.060 --> 00:02:35.880
+simplicity facilitating fast development.
+
+63
+00:02:35.880 --> 00:02:37.860
+As you'll see in the next couple of
+
+64
+00:02:37.860 --> 00:02:40.260
+videos, building a very complex deep
+
+65
+00:02:40.260 --> 00:02:42.420
+learning network can be achieved with
+
+66
+00:02:42.420 --> 00:02:44.520
+Keras with only few lines of code.
+
+67
+00:02:44.520 --> 00:02:46.980
+Keras normally runs on top of a
+
+68
+00:02:46.980 --> 00:02:49.290
+low-level library such as TensorFlow.
+
+69
+00:02:49.290 --> 00:02:51.810
+This means that to be able to use the
+
+70
+00:02:51.810 --> 00:02:53.880
+Kares library, you will have to install
+
+71
+00:02:53.880 --> 00:02:56.280
+TensorFlow first, and when you import
+
+72
+00:02:56.280 --> 00:02:58.740
+Keras, it will be explicitly displayed
+
+73
+00:02:58.740 --> 00:03:01.080
+what backend was used to install the
+
+74
+00:03:01.080 --> 00:03:03.870
+Keras library. Keras is also supported
+
+75
+00:03:03.870 --> 00:03:06.390
+by Google. I won't go into more details
+
+76
+00:03:06.390 --> 00:03:08.000
+about the different libraries,
+
+77
+00:03:08.000 --> 00:03:09.980
+but the take home message here is if
+
+78
+00:03:09.980 --> 00:03:11.740
+you're interested in building something
+
+79
+00:03:11.740 --> 00:03:14.240
+quickly go with the Keras library; you
+
+80
+00:03:14.240 --> 00:03:16.640
+won't be disappointed. However, if you
+
+81
+00:03:16.640 --> 00:03:18.420
+want to have more control over the
+
+82
+00:03:18.420 --> 00:03:20.120
+different nodes and layers in the
+
+83
+00:03:20.120 --> 00:03:22.280
+network, and want to watch closely what
+
+84
+00:03:22.280 --> 00:03:24.720
+happens with the network over time, then
+
+85
+00:03:24.720 --> 00:03:26.900
+PyTorch or TensorFlow would be the
+
+86
+00:03:26.900 --> 00:03:29.340
+right library. It will really boil
+
+87
+00:03:29.340 --> 00:03:33.460
+down to your personal preference.
+
+88
+00:03:33.460 --> 00:03:35.460
+With that, in the next videos, we will start
+
+89
+00:03:35.460 --> 00:03:37.680
+learning how to use the Keras library
+
+90
+00:03:37.680 --> 00:03:39.600
+to build models for regression and
+
+91
+00:03:39.600 --> 00:03:41.300
+classification problems.

@@ -1,0 +1,573 @@
+WEBVTT
+
+1
+00:00:00.030 --> 00:00:03.270
+In this video, we will start learning how
+
+2
+00:00:03.270 --> 00:00:05.819
+to use the Keras library to build deep
+
+3
+00:00:05.819 --> 00:00:08.010
+learning models. We will start with
+
+4
+00:00:08.010 --> 00:00:10.019
+building models for regression problems.
+
+5
+00:00:10.019 --> 00:00:13.230
+In this course, we will be using
+
+6
+00:00:13.230 --> 00:00:16.049
+Cognitive Class Labs, or CC Labs for
+
+7
+00:00:16.049 --> 00:00:18.750
+short, as our platform to run the lab
+
+8
+00:00:18.750 --> 00:00:23.039
+sessions. So if you go to labs.cognitiveclass.ai,
+
+9
+00:00:23.039 --> 00:00:27.000
+you can either sign in if
+
+10
+00:00:27.000 --> 00:00:28.740
+you already have a Cognitive Class
+
+11
+00:00:28.740 --> 00:00:31.740
+account, or sign up if this is your first
+
+12
+00:00:31.740 --> 00:00:33.899
+visit to Cognitive Class or its Labs
+
+13
+00:00:33.899 --> 00:00:37.710
+platform. Once you sign in you should get
+
+14
+00:00:37.710 --> 00:00:39.450
+to this landing page, where you can
+
+15
+00:00:39.450 --> 00:00:41.430
+select different environments. Let's
+
+16
+00:00:41.430 --> 00:00:43.829
+click on JupyterLab to start a new
+
+17
+00:00:43.829 --> 00:00:46.430
+JupyterLab Notebook.
+
+18
+00:00:46.430 --> 00:00:49.559
+Once JupyterLab loads, click on the
+
+19
+00:00:49.559 --> 00:00:54.960
+Python 3 icon to start a new notebook. In
+
+20
+00:00:54.960 --> 00:00:57.149
+order to avoid any technical hiccups, or
+
+21
+00:00:57.149 --> 00:00:58.739
+to make sure that you have the smoothest
+
+22
+00:00:58.739 --> 00:01:01.260
+experience, we have pre-installed the
+
+23
+00:01:01.260 --> 00:01:04.199
+Keras library in CC Labs so you can
+
+24
+00:01:04.199 --> 00:01:06.299
+import it directly by running "import
+
+25
+00:01:06.299 --> 00:01:09.930
+keras". Once the code executes, it will
+
+26
+00:01:09.930 --> 00:01:12.420
+print what backend was used to install
+
+27
+00:01:12.420 --> 00:01:14.790
+the Keras library. Here, we used the
+
+28
+00:01:14.790 --> 00:01:19.920
+TensorFlow backend. Let's take a look at
+
+29
+00:01:19.920 --> 00:01:22.950
+a regression example. Here is a data set
+
+30
+00:01:22.950 --> 00:01:25.650
+of the compressive strength of different
+
+31
+00:01:25.650 --> 00:01:28.350
+samples of concrete based on the volumes
+
+32
+00:01:28.350 --> 00:01:30.299
+of the different materials that were
+
+33
+00:01:30.299 --> 00:01:33.270
+used to make them. So the first concrete
+
+34
+00:01:33.270 --> 00:01:36.479
+sample has 540 cubic meter of
+
+35
+00:01:36.479 --> 00:01:39.780
+cement, 0 cubic meter of blast furnace
+
+36
+00:01:39.780 --> 00:01:44.220
+slag, 0 cubic meter of fly ash, 162 cubic
+
+37
+00:01:44.220 --> 00:01:47.640
+meter of water, 2.5 cubic meter of superplasticizer,
+
+38
+00:01:47.640 --> 00:01:50.850
+1040 cubic meter of
+
+39
+00:01:50.850 --> 00:01:54.780
+coarse aggregate, and 676 cubic meter of
+
+40
+00:01:54.780 --> 00:01:58.020
+fine aggregate. Such a concrete mix which
+
+41
+00:01:58.020 --> 00:02:00.899
+is 28 days old has a compressive
+
+42
+00:02:00.899 --> 00:02:07.560
+strength of 79.99 MPa. The data is in a pandas
+
+43
+00:02:07.560 --> 00:02:10.709
+dataframe and named concrete_data. So
+
+44
+00:02:10.709 --> 00:02:12.270
+let's say we would like to use the Keras
+
+45
+00:02:12.270 --> 00:02:13.980
+library to quickly build
+
+46
+00:02:13.980 --> 00:02:16.140
+a deep neural network to model this
+
+47
+00:02:16.140 --> 00:02:18.569
+dataset, and so we can automatically
+
+48
+00:02:18.569 --> 00:02:21.239
+determine the compressive strength of a
+
+49
+00:02:21.239 --> 00:02:23.550
+given concrete sample based on its
+
+50
+00:02:23.550 --> 00:02:28.170
+ingredients. So let's say that the deep
+
+51
+00:02:28.170 --> 00:02:29.520
+neural network that we would like to
+
+52
+00:02:29.520 --> 00:02:31.830
+create takes all the eight features
+
+53
+00:02:31.830 --> 00:02:35.370
+as input, feeds them into a hidden layer
+
+54
+00:02:35.370 --> 00:02:37.980
+of five nodes, which is connected to
+
+55
+00:02:37.980 --> 00:02:40.680
+another hidden layer of five nodes, which
+
+56
+00:02:40.680 --> 00:02:42.360
+is then connected to the output layer
+
+57
+00:02:42.360 --> 00:02:45.180
+with one node that is supposed to output
+
+58
+00:02:45.180 --> 00:02:46.920
+the compressive strength of a given
+
+59
+00:02:46.920 --> 00:02:50.010
+concrete sample. Note that usually you
+
+60
+00:02:50.010 --> 00:02:51.870
+would go with a much larger number of
+
+61
+00:02:51.870 --> 00:02:54.690
+neurons in each hidden layer like 50 or
+
+62
+00:02:54.690 --> 00:02:57.180
+even 100, but we're just using a small
+
+63
+00:02:57.180 --> 00:03:00.209
+network for simplicity. Notice how all
+
+64
+00:03:00.209 --> 00:03:02.880
+the nodes in one layer are connected to
+
+65
+00:03:02.880 --> 00:03:04.650
+all the other nodes in the next layer.
+
+66
+00:03:04.650 --> 00:03:09.500
+Such a network is called a dense network.
+
+67
+00:03:09.530 --> 00:03:12.360
+Before we begin using the Keras library,
+
+68
+00:03:12.360 --> 00:03:15.000
+let's prepare our data and have it in
+
+69
+00:03:15.000 --> 00:03:17.250
+the right format. The only thing we would
+
+70
+00:03:17.250 --> 00:03:19.530
+need to do is to split the dataframe
+
+71
+00:03:19.530 --> 00:03:22.230
+into two dataframes, one that has the
+
+72
+00:03:22.230 --> 00:03:24.810
+predictors columns and another one that
+
+73
+00:03:24.810 --> 00:03:28.019
+has the target column. We will also name
+
+74
+00:03:28.019 --> 00:03:33.180
+them predictors and target. Now prepare
+
+75
+00:03:33.180 --> 00:03:35.070
+to see the magic of Keras and how
+
+76
+00:03:35.070 --> 00:03:37.470
+building such a network and training it
+
+77
+00:03:37.470 --> 00:03:40.500
+and using it to predict new samples can
+
+78
+00:03:40.500 --> 00:03:42.829
+be achieved with only few lines of code.
+
+79
+00:03:42.829 --> 00:03:45.329
+The first thing you will need to do is
+
+80
+00:03:45.329 --> 00:03:48.480
+import Keras and the Sequential model
+
+81
+00:03:48.480 --> 00:03:51.840
+from "keras.models".  Because our
+
+82
+00:03:51.840 --> 00:03:54.180
+network consists of a linear stack of
+
+83
+00:03:54.180 --> 00:03:57.269
+layers, then the Sequential model is what
+
+84
+00:03:57.269 --> 00:03:59.549
+you would want to use. This is the case
+
+85
+00:03:59.549 --> 00:04:01.709
+most of the time unless you are building
+
+86
+00:04:01.709 --> 00:04:04.200
+something out of the ordinary. There are
+
+87
+00:04:04.200 --> 00:04:06.870
+two models in the Keras library. One of
+
+88
+00:04:06.870 --> 00:04:09.120
+them is the Sequential model and the
+
+89
+00:04:09.120 --> 00:04:11.700
+other one is the model class used with
+
+90
+00:04:11.700 --> 00:04:14.200
+the functional API. So to create your
+
+91
+00:04:14.200 --> 00:04:16.460
+model, you simply call the Sequential
+
+92
+00:04:16.460 --> 00:04:19.220
+constructor. Now building your layers is
+
+93
+00:04:19.220 --> 00:04:21.420
+pretty straightforward as well.
+
+94
+00:04:21.420 --> 00:04:23.540
+For that, we would need to import the "Dense"
+
+95
+00:04:23.540 --> 00:04:26.560
+type of layers from "keras.layers".
+
+96
+00:04:26.560 --> 00:04:29.920
+Then we use the add method to add each
+
+97
+00:04:29.920 --> 00:04:32.480
+dense layer. We specify the number of
+
+98
+00:04:32.480 --> 00:04:35.220
+neurons in each layer and the activation
+
+99
+00:04:35.220 --> 00:04:37.960
+function that we want to use.
+
+100
+00:04:37.960 --> 00:04:40.140
+As per our discussion in the video on activation
+
+101
+00:04:40.140 --> 00:04:42.100
+functions, ReLU is one of the
+
+102
+00:04:42.100 --> 00:04:44.000
+recommended activation functions for
+
+103
+00:04:44.000 --> 00:04:47.360
+hidden layers, so we will use that. And
+
+104
+00:04:47.360 --> 00:04:49.640
+for the first hidden layer we need to
+
+105
+00:04:49.640 --> 00:04:52.180
+pass in the "input_shape" parameter, which
+
+106
+00:04:52.180 --> 00:04:54.380
+is the number of columns or predictors
+
+107
+00:04:54.380 --> 00:04:56.480
+in our dataset.
+
+108
+00:04:56.480 --> 00:05:00.040
+Then we repeat the same thing for the other hidden layer,
+
+109
+00:05:00.040 --> 00:05:02.260
+of course without the input_shape parameter,
+
+110
+00:05:02.260 --> 00:05:04.940
+and we create our output layer with one
+
+111
+00:05:04.940 --> 00:05:07.480
+node. Now for training, we need to define
+
+112
+00:05:07.480 --> 00:05:09.760
+an optimizer and the error metric. In the
+
+113
+00:05:09.760 --> 00:05:13.000
+previous module, we used gradient descent
+
+114
+00:05:13.000 --> 00:05:15.560
+as our minimization or optimization
+
+115
+00:05:15.560 --> 00:05:18.320
+algorithm, and the mean squared error as
+
+116
+00:05:18.340 --> 00:05:20.820
+our loss measure between the predicted
+
+117
+00:05:20.820 --> 00:05:23.040
+value and the ground truth. So we will
+
+118
+00:05:23.040 --> 00:05:25.700
+stick with that and use the mean squared
+
+119
+00:05:25.700 --> 00:05:28.260
+error as our loss measure. As for the
+
+120
+00:05:28.260 --> 00:05:30.400
+minimization algorithm, there are actually
+
+121
+00:05:30.400 --> 00:05:32.720
+other more efficient algorithms than the
+
+122
+00:05:32.720 --> 00:05:34.820
+gradient descent for deep learning
+
+123
+00:05:34.820 --> 00:05:38.340
+applications. One of them is "adam". One of
+
+124
+00:05:38.340 --> 00:05:39.700
+the main advantages of the "adam"
+
+125
+00:05:39.700 --> 00:05:42.800
+optimizer is that you don't need to
+
+126
+00:05:42.800 --> 00:05:44.300
+specify the learning rate that we saw in
+
+127
+00:05:44.300 --> 00:05:46.940
+the gradient descent video. So this saves
+
+128
+00:05:46.940 --> 00:05:49.080
+us the task of optimizing the learning
+
+129
+00:05:49.080 --> 00:05:52.260
+rate for our model. Then we use the fit
+
+130
+00:05:52.260 --> 00:05:54.740
+method to train our model. Once training
+
+131
+00:05:54.740 --> 00:05:56.840
+is complete, we can start making
+
+132
+00:05:56.840 --> 00:05:59.780
+predictions using the predict method.
+
+133
+00:05:59.780 --> 00:06:02.100
+Below the video, you will find a document
+
+134
+00:06:02.100 --> 00:06:03.960
+with links to different sections in the
+
+135
+00:06:03.960 --> 00:06:06.080
+Keras library that you can refer to to
+
+136
+00:06:06.080 --> 00:06:09.040
+learn more about optimizers, models, and
+
+137
+00:06:09.040 --> 00:06:11.100
+other methods that you can use in the
+
+138
+00:06:11.100 --> 00:06:14.000
+Keras library. But this code snippet
+
+139
+00:06:14.000 --> 00:06:16.540
+here is typically all you need to know
+
+140
+00:06:16.540 --> 00:06:19.380
+to build a regression model in Keras. In
+
+141
+00:06:19.380 --> 00:06:20.780
+the next video, we will learn how to
+
+142
+00:06:20.780 --> 00:06:23.000
+build a classification model using the
+
+143
+00:06:23.000 --> 00:06:25.200
+Keras library.

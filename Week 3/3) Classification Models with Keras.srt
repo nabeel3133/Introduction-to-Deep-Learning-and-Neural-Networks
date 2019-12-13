@@ -1,0 +1,319 @@
+WEBVTT
+
+1
+00:00:00.030 --> 00:00:05.520
+in this video, we will learn how to use
+the Keras library to build models for
+
+2
+00:00:05.520 --> 00:00:10.469
+classification problems. Let's say that
+we would like to build a model that
+
+3
+00:00:10.469 --> 00:00:14.820
+would inform someone whether purchasing
+a certain car would be a good choice
+
+4
+00:00:14.820 --> 00:00:19.230
+based on the price of the car, the cost
+to maintain it, and whether it can
+
+5
+00:00:19.230 --> 00:00:24.689
+accommodate two or more people. So, here is
+a dataset that we are calling "car_data".
+
+6
+00:00:24.689 --> 00:00:30.510
+I already cleaned the data, as you can
+see, where I used one-hot encoding to
+
+7
+00:00:30.510 --> 00:00:35.370
+transform each category of price,
+maintenance, and how many people the car
+
+8
+00:00:35.370 --> 00:00:40.500
+can accommodate, into separate columns.
+So the price of the car can be either
+
+9
+00:00:40.500 --> 00:00:46.079
+high, medium, or low.
+Similarly, the cost of maintaining the
+
+10
+00:00:46.079 --> 00:00:53.280
+car can also be high, medium, or low, and
+the car can either fit two people or
+
+11
+00:00:53.280 --> 00:00:59.190
+more. If you take the first car in the
+dataset, it is considered an expensive
+
+12
+00:00:59.190 --> 00:01:06.860
+car, has high maintenance cost, and can
+fit only two people. The decision is 0,
+
+13
+00:01:06.860 --> 00:01:14.580
+meaning that buying this car would be a
+bad choice. A decision of 1 means that
+
+14
+00:01:14.580 --> 00:01:19.500
+buying the car is acceptable, a decision
+of 2 means that buying the car would
+
+15
+00:01:19.500 --> 00:01:24.689
+be a good decision, and a decision of
+3 means that buying the car would be
+
+16
+00:01:24.689 --> 00:01:30.990
+a very good decision. Let's use the same
+neural network as the one we used for
+
+17
+00:01:30.990 --> 00:01:35.520
+the regression problem that we discussed
+in the previous video. So a network that
+
+18
+00:01:35.520 --> 00:01:41.850
+still takes eight inputs or predictors,
+consists of two hidden layers, each of
+
+19
+00:01:41.850 --> 00:01:48.450
+five neurons, and an output layer. Next,
+let's divide our dataset into
+
+20
+00:01:48.450 --> 00:01:57.840
+predictors and target. However, with
+Keras, for classification problems, we
+
+21
+00:01:57.840 --> 00:02:03.090
+can't use the target column as is; we
+actually need to transform the column
+
+22
+00:02:03.090 --> 00:02:09.300
+into an array with binary values similar
+to one-hot encoding like the output
+
+23
+00:02:09.300 --> 00:02:13.860
+shown here. We easily achieve that using
+the "to_categorical"
+
+24
+00:02:13.860 --> 00:02:20.430
+function from the Keras utilities
+package. In other words, our model instead
+
+25
+00:02:20.430 --> 00:02:26.040
+of having just one neuron in the output
+layer, it would have four neurons,
+
+26
+00:02:26.040 --> 00:02:32.070
+since our target variable consists of
+four categories. In terms of code, the
+
+27
+00:02:32.070 --> 00:02:36.600
+structure of our code is pretty similar
+to the one we use to build the model for
+
+28
+00:02:36.600 --> 00:02:41.100
+our regression problem. We start by
+importing the Keras library and the
+
+29
+00:02:41.100 --> 00:02:46.470
+Sequential model and we use it to
+construct our model. We also import the
+
+30
+00:02:46.470 --> 00:02:51.900
+"Dense" layer since we will be using it to
+build our network. The additional import
+
+31
+00:02:51.900 --> 00:02:56.850
+statement here is the "to_categorical"
+function in order to transform our
+
+32
+00:02:56.850 --> 00:03:02.250
+target column into an array of binary
+numbers for classification. Then, we
+
+33
+00:03:02.250 --> 00:03:07.410
+proceed to constructing our layers. We
+use the add method to create two hidden
+
+34
+00:03:07.410 --> 00:03:12.180
+layers, each with five neurons and the
+neurons are activated using the ReLU
+
+35
+00:03:12.180 --> 00:03:19.200
+activation function. Notice how here we
+also specify the softmax function as the
+
+36
+00:03:19.200 --> 00:03:23.880
+activation function for the output layer,
+so that the sum of the predicted values
+
+37
+00:03:23.880 --> 00:03:30.390
+from all the neurons in the output layer
+sum nicely to 1. Then in defining our
+
+38
+00:03:30.390 --> 00:03:35.519
+compiler, here we will use the
+categorical cross-entropy as our loss
+
+39
+00:03:35.519 --> 00:03:40.290
+measure instead of the mean squared
+error that we use for regression, and we
+
+40
+00:03:40.290 --> 00:03:45.209
+will specify the evaluation metric to be
+"accuracy". "accuracy" is a built-in
+
+41
+00:03:45.209 --> 00:03:49.799
+evaluation metric in Keras but you can
+actually define your own evaluation
+
+42
+00:03:49.799 --> 00:03:54.709
+metric and pass it in the metrics
+parameter. Then we fit the model.
+
+43
+00:03:54.709 --> 00:03:58.980
+Notice how this time we're specifying
+the number of epochs for training the
+
+44
+00:03:58.980 --> 00:04:02.820
+model. Although we didn't specify the
+number of epochs when we built a
+
+45
+00:04:02.820 --> 00:04:07.860
+regression model, but we could have done that. Finally, we use the predict method
+
+46
+00:04:07.860 --> 00:04:14.220
+to make predictions. Now the output of
+the Keras predict method would be
+
+47
+00:04:14.220 --> 00:04:18.900
+something like what's shown here. For
+each data point, the output is the
+
+48
+00:04:18.900 --> 00:04:23.250
+probability that the decision of
+purchasing a given car belongs to one of
+
+49
+00:04:23.250 --> 00:04:27.690
+the four classes. For each data point, the
+probabilities should sum to 1,
+
+50
+00:04:27.690 --> 00:04:33.330
+and the higher the probability the
+more confident is the algorithm that
+
+51
+00:04:33.330 --> 00:04:38.130
+a datapoint belongs to the respective
+class. So for the first data point or the
+
+52
+00:04:38.130 --> 00:04:43.430
+first car in the test set, the decision
+would be 0 meaning not acceptable,
+
+53
+00:04:43.430 --> 00:04:49.650
+since the first probability is the
+highest, with a value of 0.99 or close to
+
+54
+00:04:49.650 --> 00:04:56.280
+1, in this case. Similarly, for the second
+datapoint, the decision is also 0 or
+
+55
+00:04:56.280 --> 00:05:01.230
+not acceptable, since the probability for
+this class is the highest, again with a
+
+56
+00:05:01.230 --> 00:05:07.500
+value of 0.99 or almost 1. For the first
+three datapoints, the model is very
+
+57
+00:05:07.500 --> 00:05:13.500
+confident that purchasing these cars is
+not acceptable. As for the last three
+
+58
+00:05:13.500 --> 00:05:18.750
+datapoints, the decision would be 1 or
+acceptable, since the probabilities for
+
+59
+00:05:18.750 --> 00:05:24.480
+the second class are higher than the
+rest of the classes. But notice how the
+
+60
+00:05:24.480 --> 00:05:29.700
+probabilities for decision 0 and
+decision 1 are very close. Therefore,
+
+61
+00:05:29.700 --> 00:05:35.520
+the model is not very confident but it
+would lean towards accepting purchasing
+
+62
+00:05:35.520 --> 00:05:40.470
+these cars. In the lab part, you will
+get the chance to build your own
+
+63
+00:05:40.470 --> 00:05:45.540
+regression and classification models
+using the Keras library, so make sure to
+
+64
+00:05:45.540 --> 00:05:47.700
+complete this module's lab components.
