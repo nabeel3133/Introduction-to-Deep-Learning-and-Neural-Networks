@@ -1,0 +1,453 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.560
+As we discussed earlier, activation
+
+2
+00:00:04.560 --> 00:00:07.319
+functions play a major role in the
+
+3
+00:00:07.319 --> 00:00:10.080
+learning process of a neural network. So
+
+4
+00:00:10.080 --> 00:00:12.300
+far, we have used only the sigmoid
+
+5
+00:00:12.300 --> 00:00:14.519
+function as the activation function in
+
+6
+00:00:14.519 --> 00:00:17.190
+our networks, but we saw how the sigmoid
+
+7
+00:00:17.190 --> 00:00:19.770
+function has its shortcomings since it
+
+8
+00:00:19.770 --> 00:00:21.060
+can lead to the vanishing gradient
+
+9
+00:00:21.060 --> 00:00:24.570
+problem for the earlier layers. In this
+
+10
+00:00:24.570 --> 00:00:27.150
+video, we will discuss other activation
+
+11
+00:00:27.150 --> 00:00:30.150
+functions; ones that are more efficient
+
+12
+00:00:30.150 --> 00:00:33.030
+to use and are more applicable to deep
+
+13
+00:00:33.030 --> 00:00:37.680
+learning applications. There are seven
+
+14
+00:00:37.680 --> 00:00:39.750
+types of activation functions that you
+
+15
+00:00:39.750 --> 00:00:41.809
+can use when building a neural network.
+
+16
+00:00:41.809 --> 00:00:45.539
+There is the binary step function, the
+
+17
+00:00:45.539 --> 00:00:48.600
+linear or identity function, there is our
+
+18
+00:00:48.600 --> 00:00:50.789
+old friend the sigmoid or logistic
+
+19
+00:00:50.789 --> 00:00:54.149
+function, there is the hyperbolic tangent,
+
+20
+00:00:54.149 --> 00:00:57.449
+or tanh, function, the rectified linear
+
+21
+00:00:57.449 --> 00:01:01.140
+unit (ReLU) function, the leaky ReLU
+
+22
+00:01:01.140 --> 00:01:04.250
+function, and the softmax function. In
+
+23
+00:01:04.250 --> 00:01:07.650
+this video, we will discuss the popular
+
+24
+00:01:07.650 --> 00:01:10.470
+ones, which are the sigmoid, the
+
+25
+00:01:10.470 --> 00:01:14.220
+hyperbolic tangent, ReLU, and the softmax
+
+26
+00:01:14.220 --> 00:01:19.950
+functions. This is the sigmoid function.
+
+27
+00:01:19.950 --> 00:01:25.409
+At z = 0, a is equal to 0.5 and when z
+
+28
+00:01:25.409 --> 00:01:28.049
+is a very large positive number, a is
+
+29
+00:01:28.049 --> 00:01:30.720
+close to 1, and when z is a very large
+
+30
+00:01:30.720 --> 00:01:33.710
+negative number, a is close to zero.
+
+31
+00:01:33.710 --> 00:01:37.259
+Sigmoid functions used to be widely used
+
+32
+00:01:37.259 --> 00:01:39.990
+as activation functions in the hidden
+
+33
+00:01:39.990 --> 00:01:42.509
+layers of a neural network. However, as
+
+34
+00:01:42.509 --> 00:01:45.060
+you can see, the function is pretty flat
+
+35
+00:01:45.060 --> 00:01:47.430
+beyond the +3 and  -3
+
+36
+00:01:47.430 --> 00:01:50.130
+region. This means that once the function
+
+37
+00:01:50.130 --> 00:01:52.560
+falls in that region, the gradients
+
+38
+00:01:52.560 --> 00:01:55.200
+become very small. This results in the
+
+39
+00:01:55.200 --> 00:01:57.210
+vanishing gradient problem that we
+
+40
+00:01:57.210 --> 00:01:59.850
+discussed, and as the gradients approach
+
+41
+00:01:59.850 --> 00:02:02.420
+0, the network doesn't really learn.
+
+42
+00:02:02.420 --> 00:02:04.590
+Another problem with the sigmoid
+
+43
+00:02:04.590 --> 00:02:06.840
+function is that the values only range
+
+44
+00:02:06.840 --> 00:02:09.780
+from 0 to 1. This means that the sigmoid
+
+45
+00:02:09.780 --> 00:02:12.209
+function is not symmetric around the
+
+46
+00:02:12.209 --> 00:02:13.500
+origin.
+
+47
+00:02:13.500 --> 00:02:15.780
+The values received are all positive.
+
+48
+00:02:15.780 --> 00:02:18.570
+Well, not all the times would we desire
+
+49
+00:02:18.570 --> 00:02:21.240
+that values going to the next neuron be
+
+50
+00:02:21.240 --> 00:02:24.060
+all of the same sign. This can be
+
+51
+00:02:24.060 --> 00:02:26.190
+addressed by scaling the sigmoid
+
+52
+00:02:26.190 --> 00:02:28.920
+function, and this brings us to the next
+
+53
+00:02:28.920 --> 00:02:31.200
+activation function: the hyperbolic
+
+54
+00:02:31.200 --> 00:02:36.420
+tangent function. This is the hyperbolic
+
+55
+00:02:36.420 --> 00:02:39.510
+tangent, or tanh, function. It is very
+
+56
+00:02:39.510 --> 00:02:41.730
+similar to the sigmoid function. It is
+
+57
+00:02:41.730 --> 00:02:43.860
+actually just a scaled version of the
+
+58
+00:02:43.860 --> 00:02:46.890
+sigmoid function, but unlike the sigmoid
+
+59
+00:02:46.890 --> 00:02:49.290
+function, it's symmetric over the origin.
+
+60
+00:02:49.290 --> 00:02:52.610
+It ranges from  -1 to +1.
+
+61
+00:02:52.610 --> 00:02:55.650
+However, although it overcomes the lack
+
+62
+00:02:55.650 --> 00:02:58.170
+of symmetry of the sigmoid function, it
+
+63
+00:02:58.170 --> 00:02:59.880
+also leads to the vanishing gradient
+
+64
+00:02:59.880 --> 00:03:05.580
+problem in very deep neural networks. The
+
+65
+00:03:05.580 --> 00:03:08.220
+rectified linear unit, or ReLU, function
+
+66
+00:03:08.220 --> 00:03:10.770
+is the most widely used activation
+
+67
+00:03:10.770 --> 00:03:13.280
+function when designing networks today.
+
+68
+00:03:13.280 --> 00:03:16.650
+In addition to it being nonlinear, the
+
+69
+00:03:16.650 --> 00:03:18.420
+main advantage of using the ReLU,
+
+70
+00:03:18.420 --> 00:03:20.190
+function over the other activation
+
+71
+00:03:20.190 --> 00:03:23.070
+functions is that it does not activate
+
+72
+00:03:23.070 --> 00:03:26.150
+all the neurons at the same time.
+
+73
+00:03:26.150 --> 00:03:28.950
+According to the plot here, if the input
+
+74
+00:03:28.950 --> 00:03:32.280
+is negative it will be converted to 0,
+
+75
+00:03:32.280 --> 00:03:34.980
+and the neuron does not get activated.
+
+76
+00:03:34.980 --> 00:03:38.010
+This means that at a time, only a few
+
+77
+00:03:38.010 --> 00:03:40.620
+neurons are activated, making the network
+
+78
+00:03:40.620 --> 00:03:44.820
+sparse and very efficient. Also, the ReLU
+
+79
+00:03:44.820 --> 00:03:46.170
+function was one of the main
+
+80
+00:03:46.170 --> 00:03:47.790
+advancements in the field of deep
+
+81
+00:03:47.790 --> 00:03:49.890
+learning that led to overcoming the
+
+82
+00:03:49.890 --> 00:03:55.080
+vanishing gradient problem. One last
+
+83
+00:03:55.080 --> 00:03:57.000
+activation function that we will discuss
+
+84
+00:03:57.000 --> 00:04:00.299
+here is the softmax function. The softmax
+
+85
+00:04:00.299 --> 00:04:02.519
+function is also a type of a sigmoid
+
+86
+00:04:02.519 --> 00:04:04.709
+function, but it is handy when we are
+
+87
+00:04:04.709 --> 00:04:07.220
+trying to handle classification problems.
+
+88
+00:04:07.220 --> 00:04:10.530
+The softmax function is ideally used in
+
+89
+00:04:10.530 --> 00:04:13.769
+the output layer of the classifier where
+
+90
+00:04:13.769 --> 00:04:15.180
+we are actually trying to get the
+
+91
+00:04:15.180 --> 00:04:17.010
+probabilities to define the class of
+
+92
+00:04:17.010 --> 00:04:19.738
+each input. So, if a network with 3
+
+93
+00:04:19.738 --> 00:04:25.970
+neurons in the output layer outputs [1.6, 0.55, 0.98]
+
+94
+00:04:25.970 --> 00:04:28.480
+then with a softmax activation
+
+95
+00:04:28.480 --> 00:04:31.900
+function, the outputs get converted to
+
+96
+00:04:31.900 --> 00:04:38.330
+[0.51, 0.18, 0.31]. This way, it is
+
+97
+00:04:38.330 --> 00:04:40.700
+easier for us to classify a given data
+
+98
+00:04:40.700 --> 00:04:43.070
+point and determine to which category it
+
+99
+00:04:43.070 --> 00:04:47.360
+belongs. In conclusion, the sigmoid and
+
+100
+00:04:47.360 --> 00:04:49.610
+the tanh functions are avoided in many
+
+101
+00:04:49.610 --> 00:04:52.130
+applications nowadays since they can
+
+102
+00:04:52.130 --> 00:04:53.990
+lead to the vanishing gradient problem.
+
+103
+00:04:53.990 --> 00:04:56.510
+The ReLU function is the function
+
+104
+00:04:56.510 --> 00:04:59.300
+that's widely used nowadays, and it's
+
+105
+00:04:59.300 --> 00:05:01.820
+important to note that it is only used in
+
+106
+00:05:01.820 --> 00:05:04.880
+the hidden layers. Finally, when building
+
+107
+00:05:04.880 --> 00:05:07.280
+a model, you can begin with using the
+
+108
+00:05:07.280 --> 00:05:10.070
+ReLU function and then you can switch to
+
+109
+00:05:10.070 --> 00:05:12.200
+other activation functions if the
+
+110
+00:05:12.200 --> 00:05:14.000
+ReLU function does not yield a good
+
+111
+00:05:14.000 --> 00:05:17.540
+performance. And this concludes this
+
+112
+00:05:17.540 --> 00:05:19.850
+video on activation functions. I'll see
+
+113
+00:05:19.850 --> 00:05:20.850
+you in the next video.

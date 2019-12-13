@@ -1,0 +1,161 @@
+WEBVTT
+
+1
+00:00:00.030 --> 00:00:03.419
+In this video, we will discuss a problem
+
+2
+00:00:03.419 --> 00:00:05.029
+with the sigmoid activation function
+
+3
+00:00:05.029 --> 00:00:07.560
+that prevented neural networks from
+
+4
+00:00:07.560 --> 00:00:10.260
+booming sooner. This problem is the
+
+5
+00:00:10.260 --> 00:00:14.040
+vanishing gradient problem. Recall from
+
+6
+00:00:14.040 --> 00:00:16.199
+the previous video, with a very simple
+
+7
+00:00:16.199 --> 00:00:19.170
+network of two neurons only, the
+
+8
+00:00:19.170 --> 00:00:21.029
+derivatives of the error with respect to
+
+9
+00:00:21.029 --> 00:00:24.390
+the weights were as follows. See how
+
+10
+00:00:24.390 --> 00:00:26.880
+small the gradients are, but more
+
+11
+00:00:26.880 --> 00:00:29.550
+importantly, how small the gradient of
+
+12
+00:00:29.550 --> 00:00:33.420
+the error with respect to w1. Well it
+
+13
+00:00:33.420 --> 00:00:35.969
+turns out that because we are using the
+
+14
+00:00:35.969 --> 00:00:37.950
+sigmoid function as the activation
+
+15
+00:00:37.950 --> 00:00:40.079
+function, then all the intermediate
+
+16
+00:00:40.079 --> 00:00:42.840
+values in the network are between 0 and 1.
+
+17
+00:00:42.840 --> 00:00:46.860
+So when we do backpropagation, we keep
+
+18
+00:00:46.860 --> 00:00:49.050
+multiplying factors that are less than 1
+
+19
+00:00:49.050 --> 00:00:51.480
+by each other, and so their gradients
+
+20
+00:00:51.480 --> 00:00:54.690
+tend to get smaller and smaller as we
+
+21
+00:00:54.690 --> 00:00:56.629
+keep on moving backward in the network.
+
+22
+00:00:56.629 --> 00:00:59.280
+This means that the neurons in the
+
+23
+00:00:59.280 --> 00:01:02.000
+earlier layers learn very slowly as
+
+24
+00:01:02.000 --> 00:01:04.559
+compared to the neurons in the later
+
+25
+00:01:04.559 --> 00:01:07.860
+layers in the network. The earlier layers
+
+26
+00:01:07.860 --> 00:01:09.930
+in the network are the slowest to train.
+
+27
+00:01:09.930 --> 00:01:13.080
+The result is a training process that
+
+28
+00:01:13.080 --> 00:01:15.420
+takes too long and a prediction
+
+29
+00:01:15.420 --> 00:01:18.659
+accuracy that is compromised. Accordingly,
+
+30
+00:01:18.659 --> 00:01:21.180
+this is the reason why we do not use the
+
+31
+00:01:21.180 --> 00:01:24.060
+sigmoid function or similar functions as
+
+32
+00:01:24.060 --> 00:01:26.549
+activation functions, since they are
+
+33
+00:01:26.549 --> 00:01:29.329
+prone to the vanishing gradient problem.
+
+34
+00:01:29.329 --> 00:01:32.250
+Therefore, in the next video we will
+
+35
+00:01:32.250 --> 00:01:34.350
+learn about other activation functions
+
+36
+00:01:34.350 --> 00:01:36.960
+that became so popular and are now the
+
+37
+00:01:36.960 --> 00:01:39.090
+activation functions that get used
+
+38
+00:01:39.090 --> 00:01:41.400
+almost all the time in the hidden layers,
+
+39
+00:01:41.400 --> 00:01:43.590
+since they help in overcoming the
+
+40
+00:01:43.590 --> 00:01:45.590
+vanishing gradient problem.
