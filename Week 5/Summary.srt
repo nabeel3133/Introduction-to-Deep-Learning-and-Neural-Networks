@@ -1,0 +1,157 @@
+WEBVTT
+
+1
+00:00:00.319 --> 00:00:02.190
+Congratulations on completing this
+
+2
+00:00:02.190 --> 00:00:04.830
+course! Let's quickly recap what we
+
+3
+00:00:04.830 --> 00:00:08.730
+covered in this course. In module 1, we
+
+4
+00:00:08.730 --> 00:00:10.559
+went over a number of exciting and
+
+5
+00:00:10.559 --> 00:00:12.500
+motivating applications of deep learning.
+
+6
+00:00:12.500 --> 00:00:15.269
+We also briefly covered neurons and
+
+7
+00:00:15.269 --> 00:00:17.100
+neural networks in the brain to
+
+8
+00:00:17.100 --> 00:00:19.410
+appreciate how they inspire artificial
+
+9
+00:00:19.410 --> 00:00:21.869
+neural networks, and then we learned how
+
+10
+00:00:21.869 --> 00:00:24.119
+neural networks make predictions through
+
+11
+00:00:24.119 --> 00:00:26.330
+the forward propagation process. In
+
+12
+00:00:26.330 --> 00:00:29.550
+module 2, we learned how an artificial
+
+13
+00:00:29.550 --> 00:00:31.740
+neural network learns through gradient
+
+14
+00:00:31.740 --> 00:00:34.170
+descent and backpropagation. We also
+
+15
+00:00:34.170 --> 00:00:35.670
+learned about the vanishing gradient
+
+16
+00:00:35.670 --> 00:00:38.219
+problem, and which activation functions
+
+17
+00:00:38.219 --> 00:00:41.719
+are best to overcome this problem. In
+
+18
+00:00:41.719 --> 00:00:44.879
+module 3, we learnt about the Keras
+
+19
+00:00:44.879 --> 00:00:47.160
+library and how to use it to build
+
+20
+00:00:47.160 --> 00:00:48.800
+models for regression and classification
+
+21
+00:00:48.800 --> 00:00:54.000
+problems. In module 4, we learned about
+
+22
+00:00:54.000 --> 00:00:56.340
+supervised and unsupervised deep neural
+
+23
+00:00:56.340 --> 00:00:58.800
+networks, and we used the Keras library
+
+24
+00:00:58.800 --> 00:01:03.260
+to build a convolutional neural network.
+
+25
+00:01:03.260 --> 00:01:05.080
+Finally, I really
+
+26
+00:01:05.080 --> 00:01:07.260
+enjoyed putting this course together, and
+
+27
+00:01:07.260 --> 00:01:09.659
+so I really hope that you enjoyed it and
+
+28
+00:01:09.659 --> 00:01:11.159
+learned a lot from it.
+
+29
+00:01:11.160 --> 00:01:12.820
+It was difficult for me at some point,
+
+30
+00:01:12.820 --> 00:01:14.500
+because I had to leave out a lot of
+
+31
+00:01:14.500 --> 00:01:17.800
+details in order to keep it simple. The
+
+32
+00:01:17.800 --> 00:01:20.120
+point of this course was not to teach you
+
+33
+00:01:20.120 --> 00:01:22.160
+everything but to teach you enough to be
+
+34
+00:01:22.160 --> 00:01:23.900
+ready for more advanced courses on
+
+35
+00:01:23.909 --> 00:01:26.100
+deep learning, and to even start
+
+36
+00:01:26.100 --> 00:01:28.720
+learning independently if you wish. And I
+
+37
+00:01:28.720 --> 00:01:31.020
+think that you are there now. Thank you
+
+38
+00:01:31.020 --> 00:01:32.660
+for taking this course and I wish you
+
+39
+00:01:32.660 --> 00:01:34.200
+the best of luck!
