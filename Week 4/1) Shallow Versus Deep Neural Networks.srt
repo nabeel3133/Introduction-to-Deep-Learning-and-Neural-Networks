@@ -1,0 +1,313 @@
+WEBVTT
+
+1
+00:00:00.030 --> 00:00:03.210
+So far, we have mostly been dealing with
+
+2
+00:00:03.210 --> 00:00:06.240
+not very deep, or shallow, neural networks.
+
+3
+00:00:06.240 --> 00:00:09.120
+And the main reason is that they really
+
+4
+00:00:09.120 --> 00:00:11.370
+do serve as the building block of deep
+
+5
+00:00:11.370 --> 00:00:13.530
+neural networks and are easier to
+
+6
+00:00:13.530 --> 00:00:17.910
+understand due to their simplicity. There
+
+7
+00:00:17.910 --> 00:00:19.590
+isn't really a consensus on the
+
+8
+00:00:19.590 --> 00:00:21.689
+definition of a shallow neural network
+
+9
+00:00:21.689 --> 00:00:24.810
+but a neural network with one hidden
+
+10
+00:00:24.810 --> 00:00:27.240
+layer is considered a shallow neural
+
+11
+00:00:27.240 --> 00:00:30.359
+network whereas a network with many
+
+12
+00:00:30.359 --> 00:00:32.399
+hidden layers and a large number of
+
+13
+00:00:32.399 --> 00:00:35.399
+neurons in each layer is considered a
+
+14
+00:00:35.399 --> 00:00:39.510
+deep neural network. Also, unlike a
+
+15
+00:00:39.510 --> 00:00:41.579
+shallow neural network which takes only
+
+16
+00:00:41.579 --> 00:00:44.489
+input as vectors, deep neural networks
+
+17
+00:00:44.489 --> 00:00:47.579
+are able to take raw data such as images
+
+18
+00:00:47.579 --> 00:00:50.730
+and text and automatically extract the
+
+19
+00:00:50.730 --> 00:00:52.920
+necessary features to learn the data
+
+20
+00:00:52.920 --> 00:00:55.530
+better. We will start learning about deep
+
+21
+00:00:55.530 --> 00:00:57.719
+learning algorithms in the next videos.
+
+22
+00:00:57.719 --> 00:01:00.420
+But if neural networks have been around
+
+23
+00:01:00.420 --> 00:01:02.850
+for quite some time, how come only
+
+24
+00:01:02.850 --> 00:01:05.820
+recently did they turn deep and start
+
+25
+00:01:05.820 --> 00:01:07.799
+taking off resulting in a plethora of
+
+26
+00:01:07.799 --> 00:01:10.830
+cool and exciting applications? The
+
+27
+00:01:10.830 --> 00:01:12.659
+sudden boom in the deep learning field
+
+28
+00:01:12.659 --> 00:01:14.750
+can be attributed to three main factors.
+
+29
+00:01:14.750 --> 00:01:18.150
+Number one, advancement in the field
+
+30
+00:01:18.150 --> 00:01:20.909
+itself. We talked about this briefly in
+
+31
+00:01:20.909 --> 00:01:23.250
+the activation functions video, where we
+
+32
+00:01:23.250 --> 00:01:25.229
+mentioned that the ReLU activation
+
+33
+00:01:25.229 --> 00:01:27.450
+function helped overcome the challenge
+
+34
+00:01:27.450 --> 00:01:29.430
+of the vanishing gradient problem, and
+
+35
+00:01:29.430 --> 00:01:32.189
+therefore, opened the door to the creation
+
+36
+00:01:32.189 --> 00:01:33.799
+of very deep networks.
+
+37
+00:01:33.799 --> 00:01:36.210
+Therefore, advancement in the field
+
+38
+00:01:36.210 --> 00:01:39.270
+itself is one factor that helped deep
+
+39
+00:01:39.270 --> 00:01:43.079
+learning take off. Another main reason is
+
+40
+00:01:43.079 --> 00:01:45.689
+the availability of data. Deep neural
+
+41
+00:01:45.689 --> 00:01:48.030
+networks work best when trained with
+
+42
+00:01:48.030 --> 00:01:49.979
+large and large amounts of data,
+
+43
+00:01:49.979 --> 00:01:52.350
+since neural networks learn the
+
+44
+00:01:52.350 --> 00:01:55.020
+training data so well, then large amounts
+
+45
+00:01:55.020 --> 00:01:57.360
+of data have to be used in order to
+
+46
+00:01:57.360 --> 00:01:59.899
+avoid overfitting of the training data.
+
+47
+00:01:59.899 --> 00:02:02.579
+Now that large amounts of data are
+
+48
+00:02:02.579 --> 00:02:04.890
+readily available and easy to acquire
+
+49
+00:02:04.890 --> 00:02:07.020
+like never before, deep learning
+
+50
+00:02:07.020 --> 00:02:09.239
+algorithms are being tried and tested
+
+51
+00:02:09.239 --> 00:02:12.090
+like never before. Especially that the
+
+52
+00:02:12.090 --> 00:02:13.530
+other conventional machine
+
+53
+00:02:13.530 --> 00:02:15.450
+learning algorithms, while they do
+
+54
+00:02:15.450 --> 00:02:17.940
+improve with more data, but up to a
+
+55
+00:02:17.940 --> 00:02:21.330
+certain point. After that, no significant
+
+56
+00:02:21.330 --> 00:02:23.220
+improvement would be observed with more
+
+57
+00:02:23.220 --> 00:02:25.740
+data. That is definitely not the case
+
+58
+00:02:25.740 --> 00:02:28.020
+with deep learning. The more data you
+
+59
+00:02:28.020 --> 00:02:33.390
+feed it the better it performs. Finally,
+
+60
+00:02:33.390 --> 00:02:35.640
+and this goes hand-in-hand with point
+
+61
+00:02:35.640 --> 00:02:38.850
+number 2, is computational power. With
+
+62
+00:02:38.850 --> 00:02:42.120
+NVIDIA's super powerful GPUs, we are now
+
+63
+00:02:42.120 --> 00:02:44.400
+able to train very deep neural networks
+
+64
+00:02:44.400 --> 00:02:46.890
+on tremendous amount of data in a matter
+
+65
+00:02:46.890 --> 00:02:49.500
+of hours as opposed to days or weeks,
+
+66
+00:02:49.500 --> 00:02:51.600
+which is how long it used to take to
+
+67
+00:02:51.600 --> 00:02:53.450
+train very deep neural networks.
+
+68
+00:02:53.450 --> 00:02:56.100
+Therefore, users are able to experiment
+
+69
+00:02:56.100 --> 00:02:58.200
+with different deep neural networks and
+
+70
+00:02:58.200 --> 00:03:00.480
+test different prototypes in much
+
+71
+00:03:00.480 --> 00:03:03.000
+shorter periods of time. These three
+
+72
+00:03:03.000 --> 00:03:05.190
+factors are the main reasons behind the
+
+73
+00:03:05.190 --> 00:03:09.300
+boom of deep learning. In the next video,
+
+74
+00:03:09.300 --> 00:03:11.280
+we will start learning about deep
+
+75
+00:03:11.280 --> 00:03:13.290
+learning algorithms. We will start with
+
+76
+00:03:13.290 --> 00:03:15.209
+supervised deep learning algorithms, and
+
+77
+00:03:15.209 --> 00:03:17.600
+in the next video, we will learn about
+
+78
+00:03:17.600 --> 00:03:19.600
+convolutional neural networks.

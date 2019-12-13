@@ -1,0 +1,157 @@
+WEBVTT
+
+1
+00:00:00.030 --> 00:00:06.299
+In the previous video, we learned about
+convolutional neural networks, which are
+
+2
+00:00:06.299 --> 00:00:11.160
+supervised deep learning models that
+have revolutionized the field of
+
+3
+00:00:11.160 --> 00:00:16.680
+computer vision, especially object
+detection in images. In this video, we
+
+4
+00:00:16.680 --> 00:00:20.670
+will learn about another supervised deep
+learning model, which is the recurrent
+
+5
+00:00:20.670 --> 00:00:28.590
+neural network. So far, we have seen
+neural networks and deep learning models
+
+6
+00:00:28.590 --> 00:00:34.649
+that see datapoints as independent
+instances. However, let's say you want to
+
+7
+00:00:34.649 --> 00:00:38.070
+build a model that can analyze scenes in
+a movie.
+
+8
+00:00:38.070 --> 00:00:43.309
+Well, you cannot assume that scenes in a
+movie are independent, and therefore,
+
+9
+00:00:43.309 --> 00:00:49.140
+traditional deep learning models are not
+suitable for this application. Recurrent
+
+10
+00:00:49.140 --> 00:00:54.000
+neural networks overcome this issue. Recurrent neural networks or (RNNs)
+
+11
+00:00:54.000 --> 00:00:59.340
+for short, are networks with loops that
+don't just take a new input at a time,
+
+12
+00:00:59.340 --> 00:01:04.619
+but also take in as input the output from
+the previous dat point that was fed
+
+13
+00:01:04.619 --> 00:01:09.659
+into the network. Accordingly, this is how
+the architecture of a recurrent neural
+
+14
+00:01:09.659 --> 00:01:14.280
+network would look like. Essentially, we
+can start with a normal neural network.
+
+15
+00:01:14.280 --> 00:01:24.520
+At time t = 0, the network takes in
+input x0 and outputs a0. Then, at time t = 1,
+
+16
+00:01:24.520 --> 00:01:30.509
+in addition to the input  x1,
+the network also takes a0 as input,
+
+17
+00:01:30.509 --> 00:01:38.250
+weighted with weight w0,1, and so on and so forth. As a result, recurrent neural
+
+18
+00:01:38.250 --> 00:01:42.479
+networks are very good at modelling
+patterns and sequences of data, such as
+
+19
+00:01:42.479 --> 00:01:49.229
+texts, genomes, handwriting, and stock
+markets. These algorithms take time and
+
+20
+00:01:49.229 --> 00:01:54.630
+sequence into account, which means that
+they have a temporal dimension. A very
+
+21
+00:01:54.630 --> 00:01:59.969
+popular type of recurrent neural network
+is the long short-term memory model or
+
+22
+00:01:59.969 --> 00:02:06.259
+the (LSTM) model for short. It has been
+successfully used for many applications
+
+23
+00:02:06.259 --> 00:02:11.110
+including image generation, where a model trained on many
+
+24
+00:02:11.110 --> 00:02:16.470
+images is used to generate new novel
+images. Another application is
+
+25
+00:02:16.470 --> 00:02:22.170
+handwriting generation, which I described
+in the welcome video of this course. Also
+
+26
+00:02:22.170 --> 00:02:27.670
+LSTM models have been successfully
+used to build algorithms that can
+
+27
+00:02:27.670 --> 00:02:35.290
+automatically describe images as well as
+streams of videos. I think this is a good
+
+28
+00:02:35.290 --> 00:02:39.760
+overview of recurrent neural networks.
+Given that this is just an introductory
+
+29
+00:02:39.760 --> 00:02:45.380
+course I will leave it here. This
+concludes this video
+
+30
+00:02:45.380 --> 00:02:47.260
+on recurrent neural networks. I will see
+you in the next video
+
+31
+00:02:47.260 --> 00:02:51.360
+we will switch to unsupervised deep
+learning models and talk about
+
+32
+00:02:51.360 --> 00:02:54.360
+autoencoders.

@@ -1,0 +1,163 @@
+WEBVTT
+
+1
+00:00:00.030 --> 00:00:04.920
+So far, we discussed two supervised deep
+learning models, which are the
+
+2
+00:00:04.920 --> 00:00:10.050
+convolutional neural network and the
+recurrent neural network. In this video, we
+
+3
+00:00:10.050 --> 00:00:15.379
+will switch to an unsupervised deep
+learning model which is the autoencoder.
+
+4
+00:00:15.379 --> 00:00:22.170
+So what are autoencoders? Autoencoding
+is a data compression algorithm where
+
+5
+00:00:22.170 --> 00:00:26.730
+the compression and the decompression
+functions are learned automatically from
+
+6
+00:00:26.730 --> 00:00:31.949
+data. instead of being engineered by a
+human. Such autoencoders are built using
+
+7
+00:00:31.949 --> 00:00:37.680
+neural networks. Autoencoders are data
+specific, which means that they will only
+
+8
+00:00:37.680 --> 00:00:43.559
+be able to compress data similar to what
+they have been trained on. Therefore, an
+
+9
+00:00:43.559 --> 00:00:47.280
+autoencoder
+trained on pictures of cars would do a
+
+10
+00:00:47.280 --> 00:00:52.140
+rather poor job of compressing pictures
+of buildings, because the features it
+
+11
+00:00:52.140 --> 00:00:56.969
+would learn would be vehicle or car
+specific. Some interesting applications
+
+12
+00:00:56.969 --> 00:01:02.879
+of autoencoders are data denoising and
+dimensionality reduction for data
+
+13
+00:01:02.879 --> 00:01:09.000
+visualization. Here is the architecture of
+an autoencoder. It takes an image, for
+
+14
+00:01:09.000 --> 00:01:14.070
+example, as an input and uses an encoder
+to find the optimal compressed
+
+15
+00:01:14.070 --> 00:01:19.530
+representation of the input image. Then,
+using a decoder the original image is
+
+16
+00:01:19.530 --> 00:01:26.189
+restored. So an autoencoder is an
+unsupervised neural network model. It
+
+17
+00:01:26.189 --> 00:01:31.650
+uses backpropagation by setting the
+target variable to be the same as the
+
+18
+00:01:31.650 --> 00:01:37.939
+input. In other words, it tries to learn
+an approximation of an identity function.
+
+19
+00:01:37.939 --> 00:01:42.619
+Because of non-linear activation
+functions in neural networks,
+
+20
+00:01:42.619 --> 00:01:47.549
+autoencoders can learn data projections
+that are more interesting than a
+
+21
+00:01:47.549 --> 00:01:53.250
+principal component analysis PCA or
+other basic techniques, which can handle
+
+22
+00:01:53.250 --> 00:01:58.950
+only linear transformations. A very
+popular type of autoencoders is the
+
+23
+00:01:58.950 --> 00:02:04.829
+Restricted Boltzmann Machines or (RBMs) for short. RBMs have been successfully
+
+24
+00:02:04.829 --> 00:02:10.440
+used for various applications, including
+fixing imbalanced datasets. Because
+
+25
+00:02:10.440 --> 00:02:13.470
+RBMs learn the input in order to be
+able to
+
+26
+00:02:13.470 --> 00:02:18.030
+regenerate it, then they can learn the
+distribution of the minority class in an
+
+27
+00:02:18.030 --> 00:02:23.760
+imbalance dataset ,and then generate more data points of that class, transforming
+
+28
+00:02:23.760 --> 00:02:26.940
+the imbalance dataset into a balanced
+data set.
+
+29
+00:02:26.940 --> 00:02:32.820
+Similarly, RBMs can also be used to
+estimate missing values in different
+
+30
+00:02:32.820 --> 00:02:38.100
+features of a data set. Another popular
+application of Restricted Boltzmann
+
+31
+00:02:38.100 --> 00:02:46.320
+Machines is automatic feature extraction
+of especially unstructured data. And this
+
+32
+00:02:46.320 --> 00:02:51.330
+concludes our high-level introduction to
+autoencoders and Restricted Boltzmann
+
+33
+00:02:51.330 --> 00:02:53.750
+Machines.

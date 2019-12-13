@@ -1,0 +1,721 @@
+WEBVTT
+
+1
+00:00:00.030 --> 00:00:03.720
+In this video, we will learn about deep
+
+2
+00:00:03.720 --> 00:00:06.240
+learning algorithms. We will start with
+
+3
+00:00:06.240 --> 00:00:08.610
+supervised deep learning algorithms, and
+
+4
+00:00:08.610 --> 00:00:10.849
+in this video, we will learn about
+
+5
+00:00:10.849 --> 00:00:14.540
+convolutional neural networks.
+
+6
+00:00:14.540 --> 00:00:17.160
+Convolutional neural networks are very
+
+7
+00:00:17.160 --> 00:00:19.619
+similar to the neural networks that we
+
+8
+00:00:19.619 --> 00:00:22.170
+have seen so far in this course. They are
+
+9
+00:00:22.170 --> 00:00:24.359
+made up of neurons, which need to have
+
+10
+00:00:24.359 --> 00:00:26.730
+the weights and biases optimized. Each
+
+11
+00:00:26.730 --> 00:00:28.920
+neuron combines the inputs that it
+
+12
+00:00:28.920 --> 00:00:31.830
+receives by computing the dot product
+
+13
+00:00:31.830 --> 00:00:34.079
+between each input and the corresponding
+
+14
+00:00:34.079 --> 00:00:36.210
+weight before it fits the resulting
+
+15
+00:00:36.210 --> 00:00:38.610
+total input into an activation function,
+
+16
+00:00:38.610 --> 00:00:42.629
+ReLU most likely. So then, what is
+
+17
+00:00:42.629 --> 00:00:45.149
+different with these networks and why
+
+18
+00:00:45.149 --> 00:00:46.890
+are they called convolutional neural
+
+19
+00:00:46.890 --> 00:00:47.670
+networks?
+
+20
+00:00:47.670 --> 00:00:50.760
+Well convolutional neural networks, or
+
+21
+00:00:50.760 --> 00:00:53.730
+CNNs for short, make the explicit
+
+22
+00:00:53.730 --> 00:00:56.250
+assumption that the inputs are images,
+
+23
+00:00:56.250 --> 00:00:58.829
+which allows us to incorporate certain
+
+24
+00:00:58.829 --> 00:01:01.890
+properties into their architecture. These
+
+25
+00:01:01.890 --> 00:01:04.170
+properties make the forward propagation
+
+26
+00:01:04.170 --> 00:01:07.350
+step much more efficient and vastly
+
+27
+00:01:07.350 --> 00:01:09.780
+reduces the amount of parameters in the
+
+28
+00:01:09.780 --> 00:01:13.590
+network. Therefore, CNNs are best for
+
+29
+00:01:13.590 --> 00:01:15.960
+solving problems related to image
+
+30
+00:01:15.960 --> 00:01:18.900
+recognition, object detection, and other
+
+31
+00:01:18.900 --> 00:01:24.270
+computer vision applications. Here is a
+
+32
+00:01:24.270 --> 00:01:26.580
+typical architecture of a convolutional
+
+33
+00:01:26.580 --> 00:01:29.369
+neural network. As you can see, the
+
+34
+00:01:29.369 --> 00:01:31.400
+network consists of a series of
+
+35
+00:01:31.400 --> 00:01:34.530
+convolutional, ReLU,  and pooling layers
+
+36
+00:01:34.530 --> 00:01:37.890
+as well as a number of fully connected
+
+37
+00:01:37.890 --> 00:01:40.409
+layers which are necessary before the
+
+38
+00:01:40.409 --> 00:01:43.439
+output is generated. Now, let's study what
+
+39
+00:01:43.439 --> 00:01:49.439
+happens in each layer. So far, we have dealt
+
+40
+00:01:49.439 --> 00:01:51.479
+only with conventional neural networks
+
+41
+00:01:51.479 --> 00:01:55.350
+that take an ( n x 1) vector as their
+
+42
+00:01:55.350 --> 00:01:58.560
+input. The input to a convolutional
+
+43
+00:01:58.560 --> 00:02:00.329
+neural network, on the other hand, is
+
+44
+00:02:00.329 --> 00:02:05.310
+mostly an (n x m x 1) for grayscale images
+
+45
+00:02:05.310 --> 00:02:10.440
+or an (n x m x 3) for colored images,
+
+46
+00:02:10.440 --> 00:02:12.690
+where the number 3 represents the
+
+47
+00:02:12.690 --> 00:02:13.380
+red,
+
+48
+00:02:13.380 --> 00:02:15.870
+green, and blue components of each pixel
+
+49
+00:02:15.870 --> 00:02:20.520
+in the image. In the convolutional layer,
+
+50
+00:02:20.520 --> 00:02:23.520
+we basically define filters and we
+
+51
+00:02:23.520 --> 00:02:25.710
+compute the convolution between the
+
+52
+00:02:25.710 --> 00:02:28.230
+defined filters and each of the three
+
+53
+00:02:28.230 --> 00:02:30.960
+images. If we take the red image for
+
+54
+00:02:30.960 --> 00:02:33.660
+example, let's assume these are the pixel
+
+55
+00:02:33.660 --> 00:02:36.900
+values. Now for a (2 x 2) filter with
+
+56
+00:02:36.900 --> 00:02:39.510
+these values, let's create an empty
+
+57
+00:02:39.510 --> 00:02:41.640
+matrix to save the results of the
+
+58
+00:02:41.640 --> 00:02:43.520
+convolution process.
+
+59
+00:02:43.520 --> 00:02:46.710
+We start by sliding the filter over the
+
+60
+00:02:46.710 --> 00:02:49.680
+image and computing the dot product
+
+61
+00:02:49.680 --> 00:02:51.660
+between the filter and the overlapping
+
+62
+00:02:51.660 --> 00:02:54.540
+pixel values and storing the result in
+
+63
+00:02:54.540 --> 00:02:58.040
+the empty matrix. We repeat this step
+
+64
+00:02:58.040 --> 00:03:01.980
+moving our filter one cell, or one stride
+
+65
+00:03:01.980 --> 00:03:05.120
+is the proper terminology, at a time, and
+
+66
+00:03:05.120 --> 00:03:08.250
+we repeat this until we cover the entire
+
+67
+00:03:08.250 --> 00:03:12.900
+image and fill the empty matrix. Here, I
+
+68
+00:03:12.900 --> 00:03:15.480
+just showed one filter and only one of
+
+69
+00:03:15.480 --> 00:03:17.940
+the three images. The same thing would be
+
+70
+00:03:17.940 --> 00:03:20.430
+applied to the green and blue images and
+
+71
+00:03:20.430 --> 00:03:23.370
+you can apply more than one filter. The
+
+72
+00:03:23.370 --> 00:03:25.800
+more filters we use, the more we are able
+
+73
+00:03:25.800 --> 00:03:27.630
+to preserve the spatial dimensions
+
+74
+00:03:27.630 --> 00:03:30.450
+better. But one question you must be
+
+75
+00:03:30.450 --> 00:03:32.850
+asking yourself at this point is, why
+
+76
+00:03:32.850 --> 00:03:35.670
+would we need to use convolution? Why not
+
+77
+00:03:35.670 --> 00:03:38.460
+flatten the input image into an (n x m) x 1
+
+78
+00:03:38.460 --> 00:03:41.510
+vector and use that as our input?
+
+79
+00:03:41.510 --> 00:03:44.880
+Well, if we do that, we will end up with a
+
+80
+00:03:44.880 --> 00:03:47.430
+massive number of parameters that will
+
+81
+00:03:47.430 --> 00:03:49.530
+need to be optimized, and it will be
+
+82
+00:03:49.530 --> 00:03:52.640
+super computationally expensive. Also,
+
+83
+00:03:52.640 --> 00:03:54.660
+decreasing the number of parameters
+
+84
+00:03:54.660 --> 00:03:56.910
+would definitely help in preventing the
+
+85
+00:03:56.910 --> 00:03:59.190
+model from overfitting the training data.
+
+86
+00:03:59.190 --> 00:04:01.290
+It is worth mentioning that a
+
+87
+00:04:01.290 --> 00:04:03.750
+convolutional layer also consists of
+
+88
+00:04:03.750 --> 00:04:06.360
+ReLU's which filter the output of the
+
+89
+00:04:06.360 --> 00:04:09.300
+convolutional step passing only positive
+
+90
+00:04:09.300 --> 00:04:11.580
+values and turning any negative values
+
+91
+00:04:11.580 --> 00:04:13.830
+to 0. The next layer in our
+
+92
+00:04:13.830 --> 00:04:15.600
+convolutional neural network is the
+
+93
+00:04:15.600 --> 00:04:18.000
+pooling layer. The pooling layer's main
+
+94
+00:04:18.000 --> 00:04:20.070
+objective is to reduce the spatial
+
+95
+00:04:20.070 --> 00:04:22.410
+dimensions of the data propagating
+
+96
+00:04:22.410 --> 00:04:24.270
+through the network. There are two types
+
+97
+00:04:24.270 --> 00:04:26.240
+of pooling that are widely used in
+
+98
+00:04:26.240 --> 00:04:28.550
+convolutional neural networks. Max-
+
+99
+00:04:28.550 --> 00:04:31.280
+pooling and average pooling. In max-pooling
+
+100
+00:04:31.280 --> 00:04:33.620
+which is the most common of the
+
+101
+00:04:33.620 --> 00:04:36.169
+two, for each section of the image we scan
+
+102
+00:04:36.169 --> 00:04:39.420
+we keep the highest value, like so.
+
+103
+00:04:39.420 --> 00:04:42.800
+Here our filter is moving two strides at
+
+104
+00:04:42.800 --> 00:04:43.660
+a time.
+
+105
+00:04:43.660 --> 00:04:46.669
+Similarly, with average pooling, we
+
+106
+00:04:46.669 --> 00:04:51.340
+compute the average of each area we scan.
+
+107
+00:04:51.340 --> 00:04:54.979
+In addition to reducing the dimension of
+
+108
+00:04:54.979 --> 00:04:57.860
+the data, pooling, or max pooling in
+
+109
+00:04:57.860 --> 00:05:00.590
+particular, provides spatial variance
+
+110
+00:05:00.590 --> 00:05:03.020
+which enables the neural network to
+
+111
+00:05:03.020 --> 00:05:05.630
+recognize objects in an image even if
+
+112
+00:05:05.630 --> 00:05:08.030
+the object does not exactly resemble the
+
+113
+00:05:08.030 --> 00:05:12.740
+original object. Finally, in the fully
+
+114
+00:05:12.740 --> 00:05:15.050
+connected layer, we flatten the output
+
+115
+00:05:15.050 --> 00:05:17.360
+of the last convolutional layer and
+
+116
+00:05:17.360 --> 00:05:20.060
+connect every node of the current layer
+
+117
+00:05:20.060 --> 00:05:22.490
+with every other node of the next layer.
+
+118
+00:05:22.490 --> 00:05:25.669
+This layer basically takes as input the
+
+119
+00:05:25.669 --> 00:05:27.530
+output from the preceding layer, whether
+
+120
+00:05:27.530 --> 00:05:30.409
+it is a convolutional layer, ReLU, or
+
+121
+00:05:30.409 --> 00:05:32.900
+pooling layer, and outputs an n-dimensional
+
+122
+00:05:32.900 --> 00:05:35.570
+vector, where n is the number
+
+123
+00:05:35.570 --> 00:05:38.090
+of classes pertaining to the problem at
+
+124
+00:05:38.090 --> 00:05:41.150
+hand. For example, if you are building a
+
+125
+00:05:41.150 --> 00:05:43.940
+network to classify images of digits, the
+
+126
+00:05:43.940 --> 00:05:46.520
+dimension n would be 10, since there are
+
+127
+00:05:46.520 --> 00:05:48.979
+10 digits. You will be covering
+
+128
+00:05:48.979 --> 00:05:50.690
+convolutional neural networks in much
+
+129
+00:05:50.690 --> 00:05:52.520
+more details in the other courses in this
+
+130
+00:05:52.520 --> 00:05:55.520
+specialization, but this information is
+
+131
+00:05:55.520 --> 00:05:58.370
+more than enough to give you a general
+
+132
+00:05:58.370 --> 00:06:00.800
+understanding of convolutional neural
+
+133
+00:06:00.800 --> 00:06:03.259
+networks. Now let's see how we can use
+
+134
+00:06:03.259 --> 00:06:05.090
+the Keras library to build a
+
+135
+00:06:05.090 --> 00:06:07.819
+convolutional neural network. Here I will
+
+136
+00:06:07.819 --> 00:06:09.380
+show you how you can use the Keras
+
+137
+00:06:09.380 --> 00:06:11.900
+library to build a convolutional neural
+
+138
+00:06:11.900 --> 00:06:14.539
+network. Training and testing of a
+
+139
+00:06:14.539 --> 00:06:16.370
+convolutional neural network are the
+
+140
+00:06:16.370 --> 00:06:19.069
+same as what we have seen so far. So to
+
+141
+00:06:19.069 --> 00:06:21.289
+begin with, we use the sequential
+
+142
+00:06:21.289 --> 00:06:24.500
+constructor to create our model. Then, we
+
+143
+00:06:24.500 --> 00:06:27.349
+define our input to be the size of the
+
+144
+00:06:27.349 --> 00:06:30.319
+input images. Assuming the input images
+
+145
+00:06:30.319 --> 00:06:34.159
+are 128 by 128 color images, we define
+
+146
+00:06:34.159 --> 00:06:40.129
+the input shape to be a tuple of (128, 128, 3).
+
+147
+00:06:40.129 --> 00:06:42.529
+Next, we start adding layers to the
+
+148
+00:06:42.529 --> 00:06:45.349
+network. We start with a convolutional
+
+149
+00:06:45.349 --> 00:06:48.800
+layer, with 16 filters, each filter being
+
+150
+00:06:48.800 --> 00:06:51.919
+of size 2x2 and slides through the image
+
+151
+00:06:51.919 --> 00:06:54.469
+with a stride of magnitude 1 in the
+
+152
+00:06:54.469 --> 00:06:57.229
+horizontal direction, and of magnitude 1
+
+153
+00:06:57.229 --> 00:06:59.779
+in the vertical direction. And the layer
+
+154
+00:06:59.779 --> 00:07:03.589
+uses the ReLU activation function. Then,
+
+155
+00:07:03.589 --> 00:07:06.439
+we add a pooling layer and we're using
+
+156
+00:07:06.439 --> 00:07:09.469
+max-pooling here with a filter or
+
+157
+00:07:09.469 --> 00:07:12.409
+pooling size of 2 and the filter slides
+
+158
+00:07:12.409 --> 00:07:14.330
+through the image with a stride of
+
+159
+00:07:14.330 --> 00:07:17.689
+magnitude 2. Next, we add another set of
+
+160
+00:07:17.689 --> 00:07:20.269
+convolutional and pooling layers. The
+
+161
+00:07:20.269 --> 00:07:22.580
+only difference here is we are using more
+
+162
+00:07:22.580 --> 00:07:24.559
+filters in the convolutional layer,
+
+163
+00:07:24.559 --> 00:07:27.439
+actually twice as many filters as the
+
+164
+00:07:27.439 --> 00:07:30.919
+first convolutional layer. Finally, we
+
+165
+00:07:30.919 --> 00:07:33.649
+flatten the output from these layers so
+
+166
+00:07:33.649 --> 00:07:35.809
+that the data can proceed to the fully
+
+167
+00:07:35.809 --> 00:07:38.749
+connected layers. We add another dense
+
+168
+00:07:38.749 --> 00:07:42.349
+layer with 100 nodes and an output layer
+
+169
+00:07:42.349 --> 00:07:45.529
+that has nodes equal to the number of
+
+170
+00:07:45.529 --> 00:07:47.990
+classes in the problem at hand. And we
+
+171
+00:07:47.990 --> 00:07:50.269
+use the softmax activation function in
+
+172
+00:07:50.269 --> 00:07:52.729
+order to convert the outputs into
+
+173
+00:07:52.729 --> 00:07:55.909
+probabilities. With this, we conclude this
+
+174
+00:07:55.909 --> 00:07:58.279
+video on convolutional neural networks.
+
+175
+00:07:58.279 --> 00:08:01.279
+In the lab, we will implement a complete
+
+176
+00:08:01.279 --> 00:08:03.379
+convolutional neural network, where we
+
+177
+00:08:03.379 --> 00:08:05.899
+will use the Keras library to build the
+
+178
+00:08:05.899 --> 00:08:08.959
+network, train it, and then validate it. So
+
+179
+00:08:08.959 --> 00:08:10.789
+make sure to complete this module's lab
+
+180
+00:08:10.789 --> 00:08:13.789
+on convolution learning networks.
