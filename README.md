@@ -8,6 +8,7 @@ This repository consists of all the material provided in the course __Introducti
 - Solution to Quizzes
 
 ## Certificate
+- (Verified Certificate)[https://www.coursera.org/account/accomplishments/certificate/BAMFKKVEFGBH]
 
 ## References 
 [[1] Introduction to Deep Learning and Neural Networks with Keras - Offered By IBM](https://www.coursera.org/learn/introduction-to-deep-learning-with-keras)
